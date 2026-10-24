@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Way Medical Center | Multi-Specialty & Dental Clinic in Sharjah, UAE</title>
+  <meta name="description" content="Happy Way Medical Center in Rolla, Sharjah offers expert multi-specialty care and advanced dental solutions. 4.7★ rated with 405+ reviews. Book consultations, access digital lab reports, and experience exceptional healthcare." />
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              darkTeal: '#093a36',
+              charcoal: '#111827',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Outfit', sans-serif; }
+    .teal-gradient-text {
+      background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-mesh {
+      background-image: 
+        radial-gradient(at 15% 15%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
+        radial-gradient(at 85% 20%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
+    }
+    .card-hover-effect {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -10px rgba(13, 148, 136, 0.2);
+    }
+  </style>
+</head>
+<body class="selection:bg-teal-500 selection:text-white">
+
+  <!-- TOP INFORMATION BAR -->
+  <header class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5 hover:text-white transition">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal-400"></i>
+          <span>3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Open Today: 9:00 AM – 10:00 PM</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5 bg-slate-800/80 px-2.5 py-0.5 rounded-full border border-slate-700">
+          <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+          <span class="font-semibold text-white">4.7</span>
+          <span class="text-slate-400 text-[11px]">(405+ Reviews)</span>
+        </div>
+        <div class="flex items-center gap-1 text-teal-400">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span class="font-medium text-[11px] uppercase tracking-wider">MOHAP Licensed Facility</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3.5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-teal-500/25">
+            <i data-lucide="activity" class="w-6 h-6 stroke-[2.2]"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-black font-heading tracking-tight text-slate-900">
+              Happy Way
+            </span>
+            <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-brand-600 -mt-1">
+              Medical Center & Dental
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="#services" class="hover:text-brand-600 transition">Services</a>
+          <a href="#app-features" class="hover:text-brand-600 transition flex items-center gap-1.5">
+            <span>Patient App</span>
+            <span class="bg-brand-50 text-brand-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-brand-200/60">New</span>
+          </a>
+          <a href="#doctors" class="hover:text-brand-600 transition">Doctors</a>
+          <a href="#reviews" class="hover:text-brand-600 transition">Reviews</a>
+          <a href="#location" class="hover:text-brand-600 transition">Location</a>
+        </div>
+
+        <!-- Right CTAs -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+971586846600" class="hidden sm:flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-700 hover:text-brand-700 hover:bg-slate-50 text-xs font-semibold border border-slate-200/80 transition">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600"></i>
+            <span>+971 58 684 6600</span>
+          </a>
+
+          <button onclick="openBookingModal('General Medicine')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-slate-900 via-brand-darkTeal to-slate-900 hover:from-brand-800 hover:to-teal-800 text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-300"></i>
+            <span>Book Appointment</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-10 pb-16 lg:pt-14 lg:pb-24 hero-mesh overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white shadow-sm border border-slate-200 text-xs font-semibold text-slate-800">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Now Accepting New Patients</span>
+          <span class="text-slate-300">|</span>
+          <span class="text-brand-700 font-bold">Sharjah, UAE</span>
+        </div>
+
+        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50/80 border border-amber-200/60 text-xs font-bold text-amber-900">
+          <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+          <span>4.7 Rating (405+ Reviews)</span>
+        </div>
+      </div>
+
+      <!-- Headline & Subtitle -->
+      <div class="text-center max-w-4xl mx-auto mb-14">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-slate-900 leading-[1.08]">
+          EXCEPTIONAL CARE & <br class="hidden sm:block" />
+          <span class="teal-gradient-text">ADVANCED DENTAL SOLUTIONS</span> <br class="hidden sm:block" />
+          IN SHARJAH
+        </h1>
+        <p class="mt-5 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Trusted multi-specialty healthcare with a <strong class="font-semibold text-slate-800">4.7-star patient satisfaction rating</strong>. Located at The Residence 7, Al Rolla St, Sharjah.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="openBookingModal('General Medicine')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm tracking-wider uppercase shadow-xl transition-all flex items-center justify-center gap-3">
+            <i data-lucide="calendar" class="w-4 h-4 text-brand-400"></i>
+            <span>Book Consultation</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400"></i>
+          </button>
+          <a href="#services" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm border border-slate-200 shadow-sm transition flex items-center justify-center gap-2">
+            <span>Explore All Departments</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3-Column Interactive Grid Hero Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Card 1: Multi-Specialty Care -->
+        <div class="group relative rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800 min-h-[440px]">
+          <div class="absolute inset-0 z-0">
+            <img src="./public/images/clinic-interior.jpg" alt="Multi-Specialty Care" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-bold uppercase tracking-wider text-teal-300">
+                <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+                Multi-Specialty Care
+              </span>
+              <span class="text-xs font-semibold text-slate-400">01</span>
+            </div>
+            <h2 class="text-2xl font-bold font-heading text-white leading-tight mb-2 group-hover:text-teal-300 transition">
+              Advanced Diagnostics & Specialist Consultations
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Comprehensive healthcare under one roof—from internal medicine and cardiology to pediatrics and wellness.
+            </p>
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Routine health screenings & ECG diagnostics</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Pediatric, orthopedic & chronic care specialists</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8 pt-0">
+            <button onclick="openBookingModal('General Medicine')" class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-teal-500 hover:text-white backdrop-blur-md border border-white/20 text-white font-semibold text-xs tracking-wide uppercase transition-all flex items-center justify-between">
+              <span>Book Specialist Visit</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-teal-300"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Expert Doctors -->
+        <div class="group relative rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800 min-h-[440px]">
+          <div class="absolute inset-0 z-0">
+            <img src="./public/images/doctor-consulting.jpg" alt="Expert Doctors" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-bold uppercase tracking-wider text-teal-300">
+                <i data-lucide="stethoscope" class="w-3.5 h-3.5"></i>
+                Expert Doctors
+              </span>
+              <span class="text-xs font-semibold text-slate-400">02</span>
+            </div>
+            <h2 class="text-2xl font-bold font-heading text-white leading-tight mb-2 group-hover:text-teal-300 transition">
+              Find The Right Medical Expert & Book Instantly
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Connect directly with board-certified physicians dedicated to compassionate patient communication and accurate diagnosis.
+            </p>
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Multilingual clinicians (English, Arabic, Hindi, Urdu)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Same-day appointments & seamless Practo sync</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8 pt-0">
+            <button onclick="openBookingModal('General Medicine')" class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-teal-500 hover:text-white backdrop-blur-md border border-white/20 text-white font-semibold text-xs tracking-wide uppercase transition-all flex items-center justify-between">
+              <span>Select & Book Doctor</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-teal-300"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Advanced Dental & Lab -->
+        <div class="group relative rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800 min-h-[440px]">
+          <div class="absolute inset-0 z-0">
+            <img src="./public/images/dental-suite.jpg" alt="Advanced Dental & Lab" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-bold uppercase tracking-wider text-teal-300">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                Advanced Dental & Lab
+              </span>
+              <span class="text-xs font-semibold text-slate-400">03</span>
+            </div>
+            <h2 class="text-2xl font-bold font-heading text-white leading-tight mb-2 group-hover:text-teal-300 transition">
+              Precision Dentistry & Integrated Lab Report App
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Painless dental suites, cosmetic smile makeovers, and automated digital lab reports delivered straight to your smartphone.
+            </p>
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Digital 3D intraoral scans & laser whitening</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400 shrink-0"></i>
+                <span>Root canals, crowns, implants & veneers</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative z-10 p-7 sm:p-8 pt-0">
+            <button onclick="openBookingModal('Dentistry')" class="w-full py-3 px-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs tracking-wide uppercase transition-all shadow-md flex items-center justify-between">
+              <span>Book Dental Consultation</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-950"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLINICAL DEPARTMENTS / SERVICES GRID -->
+  <section id="services" class="py-16 lg:py-24 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-teal-600 font-bold text-xs uppercase tracking-wider block mb-1">
+          Specialty Healthcare In Sharjah
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
+          Comprehensive Clinical Departments
+        </h2>
+        <p class="mt-2 text-slate-600 text-sm">
+          World-class diagnostics and treatment options provided by licensed specialists.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Dentistry -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Advanced Dentistry</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">Veneers, Hollywood smile, root canal therapy, braces, invisible aligners, and laser whitening.</p>
+          <button onclick="openBookingModal('Dentistry')" class="text-xs font-bold text-teal-700 hover:text-teal-800 flex items-center gap-1">
+            <span>Book Dentist</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- General Medicine -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-4">
+            <i data-lucide="stethoscope" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">General Medicine</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">Acute illness, chronic diabetes and hypertension management, routine full-body checkups.</p>
+          <button onclick="openBookingModal('General Medicine')" class="text-xs font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1">
+            <span>Book Consultation</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Pediatrics -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+            <i data-lucide="baby" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Pediatrics</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">Newborn assessments, childhood immunizations, allergy treatments, and growth milestones.</p>
+          <button onclick="openBookingModal('Pediatrics')" class="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1">
+            <span>Book Pediatrician</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Cardiology -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-4">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Cardiology</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">12-Lead ECG testing, cardiovascular profiling, cholesterol control, and heart wellness.</p>
+          <button onclick="openBookingModal('Cardiology')" class="text-xs font-bold text-rose-700 hover:text-rose-800 flex items-center gap-1">
+            <span>Book Cardiologist</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Orthopedics -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="bone" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Orthopedics</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">Joint pain injections, arthritis care, fracture healing, back spine alignment, and sports rehab.</p>
+          <button onclick="openBookingModal('Orthopedics')" class="text-xs font-bold text-indigo-700 hover:text-indigo-800 flex items-center gap-1">
+            <span>Book Orthopedic</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Dermatology -->
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+            <i data-lucide="scan" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Dermatology</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mb-4">Acne, eczema, chemical peels, hydrafacial, skin rejuvenation, and laser cosmetic solutions.</p>
+          <button onclick="openBookingModal('Dermatology')" class="text-xs font-bold text-purple-700 hover:text-purple-800 flex items-center gap-1">
+            <span>Book Dermatologist</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL APP & EMR SECTION -->
+  <section id="app-features" class="py-20 bg-slate-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold text-teal-400 uppercase tracking-widest block mb-2">
+            Connected Digital Healthcare
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black font-heading text-white leading-tight">
+            Mobile Patient App & Desktop EMR Insurance Billing
+          </h2>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Experience our newly upgraded standalone digital health ecosystem. Download verified blood and lab results in seconds, manage appointments, and receive cashless insurance pre-authorizations seamlessly.
+          </p>
+
+          <div class="mt-6 space-y-3 text-xs text-slate-300">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400"></i>
+              <span>Direct PDF Lab Reports delivered straight to your smartphone</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400"></i>
+              <span>Cashless insurance billing with Daman, NextCare, AXA, Oman Insurance & MedNet</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-400"></i>
+              <span>Continuous synchronization with your existing Practo health records</span>
+            </div>
+          </div>
+
+          <div class="mt-8 flex gap-3">
+            <a href="https://wa.me/971586846600?text=Please%20send%20me%20the%20Happy%20Way%20patient%20app%20link" target="_blank" class="px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Request App Access</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+          <img src="./public/images/patient-app-mockup.jpg" alt="Patient App" class="w-full h-auto object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT SECTION -->
+  <section id="location" class="py-16 lg:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-teal-600 font-bold text-xs uppercase tracking-wider block mb-1">Clinic Headquarters</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900">Al Rolla, Sharjah, UAE</h2>
+        <p class="text-slate-600 text-sm mt-1">Conveniently situated on the 3rd floor of The Residence 7 Building.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <i data-lucide="map-pin" class="w-6 h-6 text-teal-600 mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-base">Address</h3>
+          <p class="text-slate-600 text-xs mt-1">3rd Floor, The Residence 7 Bldg,<br />Al Rolla St, Sharjah, UAE</p>
+          <a href="https://maps.google.com/?q=The+Residence+7+Al+Rolla+Sharjah" target="_blank" class="text-xs font-bold text-teal-700 mt-4 inline-block">Open GPS Directions →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <i data-lucide="phone" class="w-6 h-6 text-teal-600 mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-base">Helpline & WhatsApp</h3>
+          <p class="text-slate-600 text-xs mt-1">+971 58 684 6600<br />24/7 WhatsApp Assistance</p>
+          <a href="tel:+971586846600" class="text-xs font-bold text-teal-700 mt-4 inline-block">Direct Call Now →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <i data-lucide="clock" class="w-6 h-6 text-teal-600 mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-base">Operating Hours</h3>
+          <p class="text-slate-600 text-xs mt-1">Sat – Thu: 9:00 AM – 10:00 PM<br />Friday: 2:00 PM – 9:00 PM</p>
+          <button onclick="openBookingModal('General Medicine')" class="text-xs font-bold text-teal-700 mt-4 inline-block">Book Ahead →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="text-lg font-bold font-heading text-white">Happy Way Medical Center</span>
+        <p class="text-slate-500 text-xs mt-0.5">3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah, UAE • Tel: +971 58 684 6600</p>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#services" class="hover:text-white">Services</a>
+        <a href="#app-features" class="hover:text-white">Patient App</a>
+        <a href="#location" class="hover:text-white">Location</a>
+        <a href="tel:+971586846600" class="text-teal-400 font-bold">+971 58 684 6600</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95">
+      <div class="bg-slate-900 p-6 text-white relative">
+        <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">✕</button>
+        <span class="text-teal-400 text-xs font-bold uppercase tracking-wider block mb-1">Instant Appointment</span>
+        <h3 class="text-xl font-bold font-heading text-white">Book Your Consultation</h3>
+        <p class="text-slate-400 text-xs">Happy Way Medical Center • Sharjah</p>
+      </div>
+      <form onsubmit="handleBookingSubmit(event)" class="p-6 space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Department</label>
+          <select id="modalDeptSelect" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800">
+            <option value="Dentistry">Advanced Dentistry & Orthodontics</option>
+            <option value="General Medicine">General & Family Medicine</option>
+            <option value="Pediatrics">Pediatrics & Child Care</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Dermatology">Dermatology</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Patient Full Name</label>
+          <input type="text" required placeholder="e.g. Fatima Al Zarooni" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Phone Number (WhatsApp)</label>
+          <input type="tel" required placeholder="+971 50 123 4567" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800" />
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs uppercase tracking-wider transition">
+          Confirm Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function openBookingModal(dept) {
+      const modal = document.getElementById('bookingModal');
+      const select = document.getElementById('modalDeptSelect');
+      if (select && dept) select.value = dept;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your appointment at Happy Way Medical Center has been recorded. Our desk will contact you via WhatsApp to confirm your slot.');
+      closeBookingModal();
+    }
+  </script>
+</body>
+</html>
