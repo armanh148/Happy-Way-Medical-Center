@@ -27,7 +27,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       {/* Background Glow Accents */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-brand-300/20 via-teal-200/15 to-transparent blur-3xl pointer-events-none rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Trust Pill & Badges */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-6">

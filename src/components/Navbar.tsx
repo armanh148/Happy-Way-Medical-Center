@@ -23,7 +23,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     <>
       {/* Top Bar with Location, Hours & Rating */}
       <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-1.5 hover:text-white transition">
               <MapPin className="w-3.5 h-3.5 text-brand-400" />
@@ -57,7 +57,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             : 'bg-white/80 backdrop-blur-sm py-4 border-b border-slate-100/60'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">

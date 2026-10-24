@@ -26,6 +26,10 @@ module.exports = {
           cardCharcoal: '#161d2b',
         },
       },
+      maxWidth: {
+        'site': '1600px',
+        '8xl': '1600px',
+      },
       fontFamily: {
         sans: ['var(--font-outfit)', 'system-ui', 'sans-serif'],
       },
