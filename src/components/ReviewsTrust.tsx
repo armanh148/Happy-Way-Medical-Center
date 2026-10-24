@@ -36,7 +36,7 @@ export default function ReviewsTrust() {
 
   return (
     <section id="reviews" className="py-16 lg:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Rating Overview Banner */}
         <div className="bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-xl border border-slate-800 mb-14">

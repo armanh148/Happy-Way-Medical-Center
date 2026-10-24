@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-slate-950 text-slate-400 text-xs border-t border-slate-800">
       {/* Emergency Callout Banner */}
       <div className="bg-gradient-to-r from-teal-950 via-slate-900 to-teal-950 border-b border-slate-800 py-4 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="w-3 h-3 rounded-full bg-rose-500 animate-pulse"></span>
             <span className="text-white font-semibold text-xs sm:text-sm">
@@ -44,7 +44,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Brand Info (2 cols) */}

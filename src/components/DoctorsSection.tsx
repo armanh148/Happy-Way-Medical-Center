@@ -50,7 +50,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
 
   return (
     <section id="doctors" className="py-16 lg:py-24 bg-slate-50 border-y border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
