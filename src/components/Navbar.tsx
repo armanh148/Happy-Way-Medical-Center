@@ -183,10 +183,11 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Slide-Over Sidebar Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50">
+      {/* Mobile Slide-Over Sidebar Drawer (OUTSIDE <nav> to escape backdrop-filter containing block) */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50">
             {/* Dark Blurred Backdrop */}
             <div 
               onClick={() => setMobileMenuOpen(false)}
@@ -347,8 +348,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
           </div>
         )}
-
-      </nav>
     </>
   );
 }

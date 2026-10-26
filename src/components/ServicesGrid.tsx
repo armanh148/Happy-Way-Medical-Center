@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Stethoscope, 
   Sparkles, 
@@ -15,7 +15,11 @@ import {
   UserCheck,
   CheckCircle2,
   Calendar,
-  HeartPulse
+  HeartPulse,
+  ChevronDown,
+  Filter,
+  LayoutGrid,
+  X
 } from 'lucide-react';
 
 interface ServicesGridProps {
@@ -24,6 +28,18 @@ interface ServicesGridProps {
 
 export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
   const [activeTab, setActiveTab] = useState('all');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const departments = [
     {
@@ -140,6 +156,8 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
     ? departments 
     : departments.filter(d => d.id === activeTab);
 
+  const activeDeptObj = departments.find(d => d.id === activeTab);
+
   return (
     <section id="services" className="py-20 lg:py-28 bg-white relative">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +170,7 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
               <span>Multi-Specialty Clinical Excellence</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight leading-tight">
-              Comprehensive Departments & <br className="hidden sm:block" />
+              Comprehensive Departments &amp; <br className="hidden sm:block" />
               <span className="brand-gradient-text">Specialized Medical Care</span>
             </h2>
             <p className="mt-3 text-base text-slate-600 max-w-2xl leading-relaxed">
@@ -172,35 +190,128 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
           </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all duration-200 ${
-              activeTab === 'all'
-                ? 'bg-slate-900 text-white shadow-md'
-                : 'bg-slate-100 hover:bg-slate-200/80 text-slate-700'
-            }`}
-          >
-            All Specialties ({departments.length})
-          </button>
-          {departments.map((dept) => {
-            const Icon = dept.icon;
-            return (
+        {/* Dropdown Filter Bar */}
+        <div className="relative mb-10 z-20" ref={dropdownRef}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-2.5 sm:p-3 rounded-2xl bg-slate-50/90 border border-slate-200/90 shadow-sm">
+            
+            {/* Left: Department Status Indicator */}
+            <div className="flex items-center gap-2 px-1 text-xs">
+              <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                <Filter className="w-4 h-4 text-emerald-700" />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-slate-500 font-medium hidden sm:inline">Active Filter:</span>
+                <span className="font-extrabold text-slate-900 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2 text-xs">
+                  {activeTab === 'all' ? (
+                    <>
+                      <LayoutGrid className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>All Specialties ({departments.length})</span>
+                    </>
+                  ) : (
+                    <>
+                      {activeDeptObj && <activeDeptObj.icon className="w-3.5 h-3.5 text-emerald-600" />}
+                      <span>{activeDeptObj?.name}</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveTab('all');
+                        }}
+                        className="ml-1 text-slate-400 hover:text-slate-800 p-0.5 rounded-full hover:bg-slate-100 transition"
+                        title="Reset to All Specialties"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </>
+                  )}
+                </span>
+              </div>
+            </div>
+
+            {/* Right: The Interactive Dropdown Trigger Button & List */}
+            <div className="relative">
               <button
-                key={dept.id}
-                onClick={() => setActiveTab(dept.id)}
-                className={`px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 ${
-                  activeTab === dept.id
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/25'
-                    : 'bg-slate-100 hover:bg-slate-200/80 text-slate-700'
-                }`}
+                type="button"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all flex items-center justify-between sm:justify-start gap-3 shadow-md active:scale-95 border border-slate-800"
+                aria-expanded={dropdownOpen}
               >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{dept.name}</span>
+                <div className="flex items-center gap-2">
+                  <Filter className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Choose Specialty Dropdown</span>
+                </div>
+                <ChevronDown className={`w-4 h-4 text-slate-300 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-            );
-          })}
+
+              {/* The Dropdown Menu List */}
+              {dropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-full sm:w-80 bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1.5 border-b border-slate-100 flex items-center justify-between">
+                    <span>Clinical Specialties</span>
+                    <span className="text-emerald-700 font-extrabold bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">6 Departments</span>
+                  </div>
+
+                  <div className="py-1 space-y-1 max-h-72 overflow-y-auto">
+                    {/* All Specialties Option */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveTab('all');
+                        setDropdownOpen(false);
+                      }}
+                      className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center justify-between transition-all ${
+                        activeTab === 'all'
+                          ? 'bg-emerald-50 text-emerald-900 font-bold'
+                          : 'text-slate-700 hover:bg-slate-50'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${activeTab === 'all' ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600'}`}>
+                          <LayoutGrid className="w-3.5 h-3.5" />
+                        </div>
+                        <span>All Specialties ({departments.length})</span>
+                      </div>
+                      {activeTab === 'all' && <Check className="w-4 h-4 text-emerald-600" />}
+                    </button>
+
+                    {/* Department Items */}
+                    {departments.map((dept) => {
+                      const Icon = dept.icon;
+                      const isSelected = activeTab === dept.id;
+                      return (
+                        <button
+                          type="button"
+                          key={dept.id}
+                          onClick={() => {
+                            setActiveTab(dept.id);
+                            setDropdownOpen(false);
+                          }}
+                          className={`w-full px-3 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center justify-between transition-all ${
+                            isSelected
+                              ? 'bg-emerald-50 text-emerald-900 font-bold'
+                              : 'text-slate-700 hover:bg-slate-50'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${isSelected ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600'}`}>
+                              <Icon className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="truncate">{dept.name}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 shrink-0 ml-2">
+                            <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-md border ${dept.badgeBg}`}>
+                              {dept.badge}
+                            </span>
+                            {isSelected && <Check className="w-4 h-4 text-emerald-600 shrink-0" />}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+          </div>
         </div>
 
         {/* Department Cards Grid */}

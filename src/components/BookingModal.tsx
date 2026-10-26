@@ -70,13 +70,13 @@ export default function BookingModal({ isOpen, onClose, initialDepartment = 'Den
       />
 
       {/* Modal Dialog: Portrait on mobile/tablet, Landscape (wide 2-column) on laptop/desktop */}
-      <div className="relative w-full max-w-lg lg:max-w-4xl xl:max-w-5xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200 my-auto">
+      <div className="relative w-full max-w-lg lg:max-w-4xl xl:max-w-5xl max-h-[94vh] flex flex-col bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200 my-auto">
         
         {/* Header Bar */}
-        <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-blue-950 p-5 sm:p-6 lg:px-8 text-white relative border-b border-slate-800">
+        <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-blue-950 p-4 sm:p-6 lg:px-8 text-white relative border-b border-slate-800 shrink-0">
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 sm:top-5 sm:right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all active:scale-95"
+            className="absolute top-3.5 right-3.5 sm:top-5 sm:right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all active:scale-95"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -107,7 +107,7 @@ export default function BookingModal({ isOpen, onClose, initialDepartment = 'Den
         </div>
 
         {/* Content Body: Portrait (<lg) vs Landscape 2-Column (>=lg) */}
-        <div className="p-4 sm:p-6 lg:p-8 max-h-[82vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto flex-1">
           {isSubmitted ? (
             /* Confirmation Screen */
             <div className="text-center py-6 lg:py-10 animate-in fade-in max-w-xl mx-auto">
