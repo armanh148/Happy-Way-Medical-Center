@@ -328,11 +328,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
         </div>
 
-        {/* Quick Highlights Strip Below Hero (2 items per line) */}
-        <div className="mt-6 sm:mt-10 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 shadow-lg shadow-slate-900/5 border border-slate-200/90 grid grid-cols-2 gap-3 sm:gap-5 lg:gap-6">
+        {/* Quick Highlights Strip Below Hero (2 per line on mobile, 1 line / 4 cols on desktop & laptop) */}
+        <div className="mt-6 sm:mt-10 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 shadow-lg shadow-slate-900/5 border border-slate-200/90 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 lg:divide-x lg:divide-slate-200/70">
           <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
-              <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
+              <Clock className="w-5 h-5 sm:w-5 sm:h-5 text-emerald-600" />
             </div>
             <div className="min-w-0">
               <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Zero Wait Times</h4>
@@ -340,9 +340,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
-              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 lg:pl-6 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
+              <ShieldCheck className="w-5 h-5 sm:w-5 sm:h-5 text-blue-600" />
             </div>
             <div className="min-w-0">
               <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Direct UAE Insurance</h4>
@@ -350,9 +350,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-600 flex items-center justify-center shrink-0 shadow-sm">
-              <Smile className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 lg:pl-6 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-600 flex items-center justify-center shrink-0 shadow-sm">
+              <Smile className="w-5 h-5 sm:w-5 sm:h-5 text-amber-600" />
             </div>
             <div className="min-w-0">
               <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">4.7 / 5.0 Rating</h4>
@@ -360,9 +360,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
-              <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 lg:pl-6 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
+              <FileText className="w-5 h-5 sm:w-5 sm:h-5 text-emerald-600" />
             </div>
             <div className="min-w-0">
               <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Digital Lab Reports</h4>
