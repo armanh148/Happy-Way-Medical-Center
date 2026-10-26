@@ -34,15 +34,15 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Trust Pill & Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-4 sm:mb-6">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm border border-slate-200/90 text-[10px] sm:text-xs font-semibold text-slate-800">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm border border-slate-200/90 text-[10px] sm:text-xs font-semibold text-slate-800">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span>Accepting New Patients & Walk-ins</span>
+            <span className="truncate max-w-[150px] xs:max-w-none">Accepting New Patients &amp; Walk-ins</span>
             <span className="text-slate-300">|</span>
-            <span className="text-emerald-700 font-bold flex items-center gap-1">
+            <span className="text-emerald-700 font-bold flex items-center gap-1 shrink-0">
               <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
               Sharjah
             </span>
@@ -50,27 +50,27 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
           <a 
             href="#reviews"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-50/95 backdrop-blur-md border border-amber-200 text-[10px] sm:text-xs font-bold text-amber-900 shadow-sm hover:bg-amber-100/80 transition"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-50/95 backdrop-blur-md border border-amber-200 text-[10px] sm:text-xs font-bold text-amber-900 shadow-sm hover:bg-amber-100/80 transition"
           >
             <div className="flex text-amber-500 shrink-0">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span>4.7 Rating (405+ Reviews)</span>
+            <span>4.7 (405+ Reviews)</span>
           </a>
 
-          <div className="hidden xs:inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-50/95 backdrop-blur-md border border-blue-200/80 text-[10px] sm:text-xs font-semibold text-blue-900 shadow-sm">
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-50/95 backdrop-blur-md border border-blue-200/80 text-[10px] sm:text-xs font-semibold text-blue-900 shadow-sm">
             <ShieldCheck className="w-3 h-3 text-blue-600 shrink-0" />
             <span>MOHAP Licensed • Direct Cashless Insurance</span>
           </div>
         </div>
 
         {/* Hero Main Header */}
-        <div className="text-center max-w-5xl mx-auto mb-10 sm:mb-14 lg:mb-16 px-2">
-          <div className="inline-block mb-2.5 sm:mb-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/80 border border-emerald-300/70 px-3 sm:px-4 py-1 rounded-full">
-              Sharjah&apos;s Trusted Healthcare & Dental Center
+        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-14 lg:mb-16 px-2">
+          <div className="inline-block mb-2 sm:mb-3">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/80 border border-emerald-300/70 px-2.5 sm:px-4 py-1 rounded-full">
+              Sharjah&apos;s Trusted Healthcare &amp; Dental Center
             </span>
           </div>
 
@@ -82,25 +82,25 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </span>
           </h1>
 
-          <p className="mt-3.5 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed px-1">
+          <p className="mt-3 sm:mt-5 text-xs sm:text-base lg:text-lg text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed px-1">
             Multi-specialty clinical consultations, board-certified physicians, and painless modern dental solutions with a <strong className="font-semibold text-slate-900">4.7-star verified satisfaction rating</strong>. Located at The Residence 7, Al Rolla St, Sharjah.
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4">
+          <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4">
             <button
               onClick={() => onOpenBooking()}
-              className="btn-shine w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:shadow-2xl hover:shadow-green-900/25 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2.5 sm:gap-3 group border border-emerald-500/40"
+              className="btn-shine w-full sm:w-auto min-h-[46px] sm:min-h-[48px] px-5 sm:px-8 py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:shadow-2xl hover:shadow-green-900/25 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 group border border-emerald-500/40"
             >
-              <Calendar className="w-4 h-4 text-emerald-200 group-hover:scale-110 transition" />
+              <Calendar className="w-4 h-4 text-emerald-200 group-hover:scale-110 transition shrink-0" />
               <span>Book Priority Consultation</span>
-              <ArrowUpRight className="w-4 h-4 text-emerald-200 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
+              <ArrowUpRight className="w-4 h-4 text-emerald-200 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition shrink-0" />
             </button>
 
             <a
               href="https://wa.me/971586846600?text=Hi%20Happy%20Way%20Medical%20Center,%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto min-h-[48px] px-5 sm:px-7 py-3 sm:py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm border border-slate-200/90 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all flex items-center justify-center gap-2 active:scale-95"
+              className="w-full sm:w-auto min-h-[46px] sm:min-h-[48px] px-5 sm:px-7 py-3 sm:py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm border border-slate-200/90 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all flex items-center justify-center gap-2 active:scale-95"
             >
               <PhoneCall className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>WhatsApp Front Desk</span>
@@ -108,19 +108,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
             <a
               href="#services"
-              className="w-full sm:w-auto min-h-[44px] px-4 sm:px-6 py-2.5 sm:py-4 rounded-2xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 hover:bg-slate-100/60"
+              className="w-full sm:w-auto min-h-[42px] sm:min-h-[44px] px-4 sm:px-6 py-2.5 sm:py-4 rounded-2xl text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 hover:bg-slate-100/60"
             >
               <span>Explore Departments</span>
-              <ChevronRight className="w-4 h-4 text-slate-400" />
+              <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
             </a>
           </div>
         </div>
 
         {/* 3-Column Interactive Grid Hero Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           
           {/* Card 1: Multi-Specialty Care */}
-          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-[440px] sm:min-h-[480px]">
+          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-0 sm:min-h-[460px] lg:min-h-[480px]">
             {/* Top Accent Gradient Line */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-500 via-green-400 to-transparent z-20" />
 
@@ -187,7 +187,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Card 2: Expert Doctors */}
-          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-[440px] sm:min-h-[480px]">
+          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-0 sm:min-h-[460px] lg:min-h-[480px]">
             {/* Top Accent Gradient Line */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-400 to-transparent z-20" />
 
@@ -255,7 +255,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Card 3: Advanced Dental Suite */}
-          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-[440px] sm:min-h-[480px]">
+          <div className="group relative rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl card-hover-effect flex flex-col justify-between border border-slate-800/90 glow-border-hover min-h-0 sm:min-h-[460px] lg:min-h-[480px]">
             {/* Top Accent Gradient Line */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 via-blue-500 to-transparent z-20" />
 

@@ -184,106 +184,170 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </div>
         </div>
 
-        {/* Mobile Full-Screen/Drawer Dropdown Menu */}
+        {/* Mobile Slide-Over Sidebar Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[96px] bottom-0 bg-slate-950/40 backdrop-blur-sm z-50">
-            <div className="bg-white border-b border-slate-200 px-5 pt-3 pb-8 max-h-[calc(100vh-100px)] overflow-y-auto animate-in slide-in-from-top-4 duration-200 shadow-2xl">
-              <div className="flex flex-col space-y-1 pt-2 font-medium text-slate-800 text-sm">
+          <div className="lg:hidden fixed inset-0 z-50">
+            {/* Dark Blurred Backdrop */}
+            <div 
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 bg-slate-950/65 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
+              aria-hidden="true"
+            />
+
+            {/* Sidebar Drawer Panel (Sliding in from Right) */}
+            <div className="fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] h-full bg-white shadow-2xl z-50 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-300 border-l border-slate-100">
+              
+              {/* Sidebar Header */}
+              <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-600 to-blue-600 flex items-center justify-center text-white shadow-md shadow-green-600/20">
+                    <Activity className="w-4 h-4 text-white stroke-[2.5]" />
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-1 text-base font-black font-heading tracking-tight leading-none">
+                      <span className="text-emerald-600">HAPPY</span>
+                      <span className="text-blue-700">WAY</span>
+                    </div>
+                    <span className="text-[9px] font-bold tracking-wider uppercase text-slate-400 mt-0.5">
+                      Medical Center • Sharjah
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition active:scale-95"
+                  aria-label="Close sidebar"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Sidebar Live Status Banner */}
+              <div className="px-4 pt-3">
+                <div className="py-1.5 px-3 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-between text-[11px]">
+                  <span className="flex items-center gap-1.5 text-emerald-800 font-semibold">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Open Today (Rolla, Sharjah)
+                  </span>
+                  <span className="text-emerald-700 font-bold text-[10px]">9AM – 10PM</span>
+                </div>
+              </div>
+
+              {/* Sidebar Navigation Links */}
+              <div className="flex-1 px-4 py-3 flex flex-col space-y-1 overflow-y-auto">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1">
+                  Menu & Departments
+                </span>
+
                 <a
                   href="#services"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-3.5 rounded-xl hover:bg-emerald-50 active:bg-emerald-100 flex items-center justify-between border-b border-slate-100"
+                  className="py-2.5 px-3.5 rounded-xl hover:bg-emerald-50/70 active:bg-emerald-100 flex items-center justify-between text-slate-800 transition group"
                 >
-                  <span className="font-semibold text-slate-900">Services & Specialties</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <span className="text-xs font-semibold group-hover:text-emerald-700">Services & Specialties</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition" />
                 </a>
+
                 <a
                   href="#app-features"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-3.5 rounded-xl hover:bg-blue-50 active:bg-blue-100 flex items-center justify-between border-b border-slate-100"
+                  className="py-2.5 px-3.5 rounded-xl hover:bg-blue-50/70 active:bg-blue-100 flex items-center justify-between text-slate-800 transition group"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-900">Digital Patient App & EMR</span>
-                    <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                      Lab Reports
+                    <span className="text-xs font-semibold group-hover:text-blue-700">Digital Patient App</span>
+                    <span className="bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-1.5 py-0.5 rounded-full">
+                      EMR
                     </span>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition" />
                 </a>
+
                 <a
                   href="#doctors"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-3.5 rounded-xl hover:bg-emerald-50 active:bg-emerald-100 flex items-center justify-between border-b border-slate-100"
+                  className="py-2.5 px-3.5 rounded-xl hover:bg-emerald-50/70 active:bg-emerald-100 flex items-center justify-between text-slate-800 transition group"
                 >
-                  <span className="font-semibold text-slate-900">Medical Specialists</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <span className="text-xs font-semibold group-hover:text-emerald-700">Specialist Clinicians</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition" />
                 </a>
+
                 <a
                   href="#reviews"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-3.5 rounded-xl hover:bg-emerald-50 active:bg-emerald-100 flex items-center justify-between border-b border-slate-100"
+                  className="py-2.5 px-3.5 rounded-xl hover:bg-emerald-50/70 active:bg-emerald-100 flex items-center justify-between text-slate-800 transition group"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-slate-900">Patient Reviews</span>
-                    <span className="text-amber-500 font-bold text-xs bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">★ 4.7</span>
+                    <span className="text-xs font-semibold group-hover:text-emerald-700">Patient Reviews</span>
+                    <span className="text-amber-500 font-bold text-[10px] bg-amber-50 px-1.5 py-0.5 rounded-md border border-amber-200">★ 4.7</span>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition" />
                 </a>
+
                 <a
                   href="#location"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 px-3.5 rounded-xl hover:bg-blue-50 active:bg-blue-100 flex items-center justify-between border-b border-slate-100"
+                  className="py-2.5 px-3.5 rounded-xl hover:bg-blue-50/70 active:bg-blue-100 flex items-center justify-between text-slate-800 transition group"
                 >
-                  <span className="font-semibold text-slate-900">Location & Rolla Map</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <span className="text-xs font-semibold group-hover:text-blue-700">Location & Rolla Map</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition" />
                 </a>
 
-                {/* Mobile Quick Action Buttons */}
-                <div className="pt-4 flex flex-col gap-2.5">
+                {/* Sidebar Quick Action CTAs */}
+                <div className="pt-4 mt-2 border-t border-slate-100 flex flex-col gap-2">
                   <button
                     onClick={() => {
                       setMobileMenuOpen(false);
                       onOpenBooking();
                     }}
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/25 active:scale-[0.98] transition"
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/20 active:scale-[0.98] transition"
                   >
-                    <Calendar className="w-4 h-4 text-emerald-200" />
-                    <span>Book Consultation Online</span>
+                    <Calendar className="w-3.5 h-3.5 text-emerald-200" />
+                    <span>Book Consultation</span>
                   </button>
 
                   <div className="grid grid-cols-2 gap-2">
                     <a
                       href="tel:+971586846600"
-                      className="py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition"
+                      className="py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition"
                     >
                       <Phone className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>Call Mobile</span>
+                      <span>Call Direct</span>
                     </a>
                     <a
                       href="https://wa.me/971586846600"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition shadow-sm"
+                      className="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition shadow-sm"
                     >
                       <MessageSquare className="w-3.5 h-3.5" />
                       <span>WhatsApp</span>
                     </a>
                   </div>
                 </div>
-
-                {/* Operating hours footer inside mobile menu */}
-                <div className="pt-4 mt-2 border-t border-slate-100 text-center">
-                  <p className="text-[11px] text-slate-500">
-                    Open Daily 9:00 AM – 10:00 PM • Fri 2:00 PM – 9:00 PM
-                  </p>
-                  <p className="text-[10px] text-slate-400 mt-0.5">
-                    3rd Floor, The Residence 7, Rolla, Sharjah
-                  </p>
-                </div>
               </div>
+
+              {/* Sidebar Footer Details */}
+              <div className="p-4 bg-slate-50 border-t border-slate-100 text-center">
+                <div className="inline-flex items-center gap-1 text-[10px] text-blue-700 bg-blue-50 border border-blue-200/60 px-2 py-0.5 rounded-full font-semibold mb-2">
+                  <ShieldCheck className="w-3 h-3 text-blue-600" />
+                  <span>MOHAP Certified Facility</span>
+                </div>
+                <p className="text-[11px] text-slate-600 font-medium">
+                  3rd Floor, The Residence 7 Building
+                </p>
+                <p className="text-[10px] text-slate-400 mt-0.5">
+                  Al Rolla St, Sharjah, UAE
+                </p>
+              </div>
+
             </div>
           </div>
         )}
+
       </nav>
     </>
   );
