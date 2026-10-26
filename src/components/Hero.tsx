@@ -37,13 +37,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Trust Pill & Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 mb-4 sm:mb-6">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm border border-slate-200/90 text-[10px] sm:text-xs font-semibold text-slate-800">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 mb-4 sm:mb-5">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-sm border border-slate-200/90 text-[10px] sm:text-xs font-semibold text-slate-800">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="truncate max-w-[150px] xs:max-w-none">Accepting New Patients &amp; Walk-ins</span>
+            <span>Accepting New Patients &amp; Walk-ins</span>
             <span className="text-slate-300">|</span>
             <span className="text-emerald-700 font-bold flex items-center gap-1 shrink-0">
               <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
@@ -53,14 +53,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
           <a 
             href="#reviews"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-50/95 backdrop-blur-md border border-amber-200 text-[10px] sm:text-xs font-bold text-amber-900 shadow-sm hover:bg-amber-100/80 transition"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-amber-50/95 backdrop-blur-md border border-amber-200 text-[10px] sm:text-xs font-bold text-amber-900 shadow-sm hover:bg-amber-100/80 transition"
           >
             <div className="flex text-amber-500 shrink-0">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span>4.7 (405+ Reviews)</span>
+            <span>4.7 Rating (405+ Reviews)</span>
           </a>
 
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-50/95 backdrop-blur-md border border-blue-200/80 text-[10px] sm:text-xs font-semibold text-blue-900 shadow-sm">
@@ -70,22 +70,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
 
         {/* Hero Main Header */}
-        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-14 lg:mb-16 px-2">
-          <div className="inline-block mb-2 sm:mb-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/80 border border-emerald-300/70 px-2.5 sm:px-4 py-1 rounded-full">
+        <div className="text-center max-w-6xl mx-auto mb-6 sm:mb-8 lg:mb-10 px-2">
+          <div className="inline-block mb-2 sm:mb-2.5">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/80 border border-emerald-300/70 px-3 sm:px-4 py-1 rounded-full">
               Sharjah&apos;s Trusted Healthcare &amp; Dental Center
             </span>
           </div>
 
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-[40px] lg:text-[34px] xl:text-[44px] 2xl:text-[52px] font-black font-heading tracking-tight text-slate-900 leading-[1.16] sm:leading-[1.12]">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-[34px] xl:text-[40px] 2xl:text-[48px] font-black font-heading tracking-tight text-slate-900 leading-[1.14] sm:leading-[1.1]">
             <span className="block">EXCEPTIONAL CARE &amp;</span>
-            <span className="block mt-1 sm:mt-2">
-              <span className="brand-gradient-text">ADVANCED DENTAL SOLUTIONS</span>{' '}
-              <span className="inline-block">IN SHARJAH</span>
+            <span className="block mt-1 sm:mt-1.5 lg:whitespace-nowrap">
+              <span className="brand-gradient-text">ADVANCED DENTAL SOLUTIONS</span> IN SHARJAH
             </span>
           </h1>
 
-          <p className="mt-3 sm:mt-5 text-xs sm:text-base lg:text-lg text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed px-1">
+          <p className="mt-2.5 sm:mt-3.5 text-xs sm:text-base lg:text-lg text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed px-1">
             Multi-specialty clinical consultations, board-certified physicians, and painless modern dental solutions with a <strong className="font-semibold text-slate-900">4.7-star verified satisfaction rating</strong>. Located at The Residence 7, Al Rolla St, Sharjah.
           </p>
 
