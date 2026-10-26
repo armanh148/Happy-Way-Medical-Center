@@ -75,7 +75,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
           {doctors.map((doctor, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl hover:border-emerald-400/50 transition-all duration-300 flex flex-col justify-between group"
+              className="luxury-card-light rounded-3xl overflow-hidden flex flex-col justify-between group"
             >
               <div>
                 {/* Doctor Visual Header with Photo */}

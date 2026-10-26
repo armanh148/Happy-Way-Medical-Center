@@ -26,6 +26,9 @@ interface HeroProps {
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 overflow-hidden hero-mesh">
+      {/* Medical Architectural Grid Overlay */}
+      <div className="absolute inset-0 medical-dot-grid opacity-60 pointer-events-none" />
+
       {/* Background Ambient Glow Accents */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] h-[300px] sm:h-[400px] bg-gradient-to-tr from-emerald-400/15 via-blue-400/10 to-transparent blur-3xl pointer-events-none rounded-full" />
       <div className="absolute top-1/3 -right-20 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-blue-500/10 blur-3xl pointer-events-none rounded-full" />

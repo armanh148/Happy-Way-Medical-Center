@@ -60,7 +60,7 @@ export default function LocationContact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
               
               {/* Card 1: Address */}
-              <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div className="luxury-card-light rounded-3xl p-5 sm:p-6 flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-3 sm:mb-4">
                     <Building className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function LocationContact() {
               </div>
 
               {/* Card 2: Contact & Helpline */}
-              <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div className="luxury-card-light rounded-3xl p-5 sm:p-6 flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center mb-3 sm:mb-4">
                     <Phone className="w-5 h-5" />
@@ -132,7 +132,7 @@ export default function LocationContact() {
             </div>
 
             {/* Working Hours Card */}
-            <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm">
+            <div className="luxury-card-light rounded-3xl p-5 sm:p-6">
               <div className="flex items-center justify-between mb-3.5 sm:mb-4">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
@@ -222,7 +222,7 @@ export default function LocationContact() {
           </div>
 
           {/* Right Column (5 cols): Direct Inquiry & Quick Booking Form */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-5 sm:p-8 border border-slate-200 shadow-xl">
+          <div className="lg:col-span-5 luxury-card-light rounded-3xl p-5 sm:p-8">
             <div className="mb-5 sm:mb-6">
               <span className="text-emerald-700 font-bold text-[10px] sm:text-xs uppercase tracking-wider block mb-1">
                 Fast Clinical Helpdesk

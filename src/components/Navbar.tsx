@@ -105,48 +105,48 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               </div>
             </a>
 
-            {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 text-[13px] xl:text-sm font-semibold text-slate-700">
+            {/* Desktop Navigation Links (Single-Line Guaranteed with whitespace-nowrap) */}
+            <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold text-slate-700">
               <a 
                 href="#services" 
-                className="px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
               >
-                Services & Specialties
+                Services &amp; Specialties
               </a>
               <a 
                 href="#app-features" 
-                className="px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200 flex items-center gap-1.5 group"
+                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200 flex items-center gap-1.5 group"
               >
                 <span>Digital Patient App</span>
-                <span className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white text-[9px] xl:text-[10px] font-extrabold px-1.5 xl:px-2 py-0.5 rounded-full shadow-sm group-hover:scale-105 transition">
-                  EMR Sync
+                <span className="hidden 2xl:inline-block bg-gradient-to-r from-emerald-600 to-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded-full shadow-sm">
+                  EMR
                 </span>
               </a>
               <a 
                 href="#doctors" 
-                className="px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
               >
-                Our Specialists
+                Specialists
               </a>
               <a 
                 href="#reviews" 
-                className="px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
               >
                 Reviews (4.7★)
               </a>
               <a 
                 href="#location" 
-                className="px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200"
               >
-                Location & Hours
+                Location &amp; Hours
               </a>
             </div>
 
             {/* Right CTAs */}
-            <div className="hidden sm:flex items-center gap-2 xl:gap-2.5">
+            <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
               <a
                 href="tel:+971586846600"
-                className="flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3.5 xl:py-2.5 rounded-xl text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 text-xs font-bold border border-slate-200/90 hover:border-emerald-300 transition-all duration-200"
+                className="whitespace-nowrap flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3.5 xl:py-2.5 rounded-xl text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 text-xs font-bold border border-slate-200/90 hover:border-emerald-300 transition-all duration-200"
               >
                 <div className="w-5 h-5 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                   <Phone className="w-3 h-3" />
@@ -157,7 +157,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
               <button
                 onClick={() => onOpenBooking()}
-                className="btn-shine relative inline-flex items-center justify-center gap-1.5 px-3.5 py-2 xl:px-5 xl:py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-emerald-700/20 active:scale-95 transition-all duration-200 shrink-0"
+                className="whitespace-nowrap btn-shine relative inline-flex items-center justify-center gap-1.5 px-3.5 py-2 xl:px-5 xl:py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-emerald-700/20 active:scale-95 transition-all duration-200 shrink-0"
               >
                 <Calendar className="w-3.5 h-3.5 text-emerald-200" />
                 <span>Book Appointment</span>

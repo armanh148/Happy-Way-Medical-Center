@@ -321,7 +321,7 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
             return (
               <div
                 key={dept.id}
-                className="group relative rounded-3xl bg-slate-50/60 hover:bg-white border border-slate-200/80 hover:border-emerald-400/60 p-5 sm:p-7 shadow-sm hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative rounded-3xl luxury-card-light p-5 sm:p-7 flex flex-col justify-between overflow-hidden"
               >
                 {/* Top glowing line on hover */}
                 <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${dept.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
