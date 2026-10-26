@@ -77,10 +77,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </span>
           </div>
 
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-[32px] lg:text-[34px] xl:text-[40px] 2xl:text-[46px] font-black font-heading tracking-tight text-slate-900 leading-[1.12]">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[56px] font-black font-heading tracking-tight text-slate-900 leading-[1.14]">
             <span className="block">EXCEPTIONAL CARE &amp;</span>
-            <span className="block mt-1 sm:mt-1.5 whitespace-normal md:whitespace-nowrap">
-              <span className="brand-gradient-text">ADVANCED DENTAL SOLUTIONS</span> IN SHARJAH
+            <span className="block brand-gradient-text mt-0.5 sm:mt-1">
+              ADVANCED DENTAL SOLUTIONS
+            </span>
+            <span className="block text-slate-900 mt-0.5 sm:mt-1">
+              IN SHARJAH
             </span>
           </h1>
 
@@ -325,45 +328,45 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
         </div>
 
-        {/* Quick Highlights Strip Below Hero */}
-        <div className="mt-8 sm:mt-12 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 shadow-lg shadow-slate-900/5 border border-slate-200/90 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
-          <div className="flex items-center gap-3 p-1">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
+        {/* Quick Highlights Strip Below Hero (2 items per line) */}
+        <div className="mt-6 sm:mt-10 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 shadow-lg shadow-slate-900/5 border border-slate-200/90 grid grid-cols-2 gap-3 sm:gap-5 lg:gap-6">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
               <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight">Zero Wait Times</h4>
-              <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5">Prompt booked appointments</p>
+            <div className="min-w-0">
+              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Zero Wait Times</h4>
+              <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5 truncate">Prompt booked appointments</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-1">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center shrink-0 shadow-sm">
               <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight">Direct UAE Insurance</h4>
-              <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5">Instant cashless approvals</p>
+            <div className="min-w-0">
+              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Direct UAE Insurance</h4>
+              <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5 truncate">Instant cashless approvals</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-1">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-600 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-50 border border-amber-200/60 text-amber-600 flex items-center justify-center shrink-0 shadow-sm">
               <Smile className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight">4.7 / 5.0 Rating</h4>
-              <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5">405+ Verified patient reviews</p>
+            <div className="min-w-0">
+              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">4.7 / 5.0 Rating</h4>
+              <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5 truncate">405+ Verified patient reviews</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-1">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 p-1 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center shrink-0 shadow-sm">
               <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight">Digital Lab Reports</h4>
-              <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5">Direct PDF to mobile & WhatsApp</p>
+            <div className="min-w-0">
+              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight truncate">Digital Lab Reports</h4>
+              <p className="text-slate-500 text-[10px] sm:text-xs mt-0.5 truncate">Direct PDF to mobile & WhatsApp</p>
             </div>
           </div>
         </div>
