@@ -76,10 +76,10 @@ export default function HomePage() {
           <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
         </a>
 
-        {/* Quick Consultation Booking Pill in Brand Green & Blue */}
+        {/* Quick Consultation Booking Pill in Brand Green & Blue (Mobile/Tablet only to prevent desktop card obstruction) */}
         <button
           onClick={() => handleOpenBooking()}
-          className="btn-shine px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-extrabold uppercase tracking-wider shadow-2xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all border border-emerald-400/30 shadow-emerald-900/25"
+          className="btn-shine px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-extrabold uppercase tracking-wider shadow-2xl flex lg:hidden items-center gap-2 hover:scale-105 active:scale-95 transition-all border border-emerald-400/30 shadow-emerald-900/25"
         >
           <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-200" />
           <span className="hidden sm:inline">Book Consultation</span>

@@ -1,12 +1,26 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Star, Quote, CheckCircle2, ThumbsUp, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { Star, Quote, CheckCircle2, Sparkles, Pause, Play, ExternalLink } from 'lucide-react';
+
+interface Review {
+  name: string;
+  location: string;
+  date: string;
+  rating: number;
+  category: 'dentistry' | 'general' | 'pediatrics' | 'specialized';
+  department: string;
+  comment: string;
+  verified: string;
+  initials: string;
+  avatarBg: string;
+}
 
 export default function ReviewsTrust() {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState<'all' | 'dentistry' | 'general' | 'pediatrics'>('all');
+  const [isPaused, setIsPaused] = useState(false);
 
-  const reviews = [
+  const reviewsList: Review[] = [
     {
       name: 'Maryam Al Suwaidi',
       location: 'Sharjah, Al Rolla',
@@ -78,15 +92,97 @@ export default function ReviewsTrust() {
       verified: 'Verified Patient',
       initials: 'RM',
       avatarBg: 'bg-blue-500/15 text-blue-700'
+    },
+    {
+      name: 'Sarah Al Nuaimi',
+      location: 'Sharjah',
+      date: '1 month ago',
+      rating: 5,
+      category: 'general',
+      department: 'Gynecology & Obstetrics',
+      comment: 'Extremely polite female specialist, welcoming atmosphere, and clear explanations. Felt respected and comfortable throughout the scan and consultation.',
+      verified: 'Verified Patient',
+      initials: 'SN',
+      avatarBg: 'bg-emerald-500/15 text-emerald-700'
+    },
+    {
+      name: 'Ibrahim Khalil',
+      location: 'Sharjah, Rolla Square',
+      date: '2 weeks ago',
+      rating: 5,
+      category: 'specialized',
+      department: 'Orthopedics & Joint Clinic',
+      comment: 'Was suffering from persistent knee pain. Doctor diagnosed the issue with on-site digital imaging and gave practical exercise guidance. Pain reduced significantly in just a week.',
+      verified: 'Practo Verified Patient',
+      initials: 'IK',
+      avatarBg: 'bg-blue-500/15 text-blue-700'
     }
   ];
 
   const filteredReviews = filter === 'all' 
-    ? reviews 
-    : reviews.filter(r => r.category === filter);
+    ? reviewsList 
+    : reviewsList.filter(r => r.category === filter);
+
+  // Divide into two alternating tracks for 2-row multi-speed infinite loop
+  const rowOne = filteredReviews.slice(0, Math.ceil(filteredReviews.length / 2));
+  const rowTwo = filteredReviews.slice(Math.ceil(filteredReviews.length / 2));
+
+  // If a single filter has few items, duplicate to maintain continuous flow
+  const loopRowOne = [...rowOne, ...rowOne, ...rowOne, ...rowOne];
+  const loopRowTwo = rowTwo.length > 0 
+    ? [...rowTwo, ...rowTwo, ...rowTwo, ...rowTwo] 
+    : loopRowOne;
+
+  const renderReviewCard = (rev: Review, idx: number) => (
+    <div
+      key={idx}
+      className="w-[300px] xs:w-[340px] sm:w-[390px] shrink-0 rounded-3xl p-5 sm:p-6 bg-white hover:bg-slate-50/70 border border-slate-200/90 hover:border-emerald-500/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group select-none"
+    >
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex text-amber-400">
+            {[...Array(rev.rating)].map((_, i) => (
+              <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
+            ))}
+          </div>
+          <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400">
+            {rev.date}
+          </span>
+        </div>
+
+        <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600/25 mb-1.5 sm:mb-2 group-hover:text-emerald-600/40 transition-colors" />
+        <p className="text-slate-700 text-xs sm:text-sm leading-relaxed italic line-clamp-4">
+          &ldquo;{rev.comment}&rdquo;
+        </p>
+      </div>
+
+      <div className="pt-4 mt-4 border-t border-slate-100">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl ${rev.avatarBg} font-bold text-xs flex items-center justify-center shrink-0`}>
+              {rev.initials}
+            </div>
+            <div className="min-w-0">
+              <h4 className="font-bold text-slate-900 text-xs sm:text-sm font-heading truncate">{rev.name}</h4>
+              <p className="text-[10px] sm:text-[11px] text-slate-500 truncate">{rev.department}</p>
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200/70 px-2 py-0.5 rounded-full shrink-0">
+            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+            {rev.verified.includes('Practo') ? 'Practo' : 'Verified'}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
-    <section id="reviews" className="py-14 sm:py-20 lg:py-28 bg-white relative">
+    <section id="reviews" className="py-14 sm:py-20 lg:py-28 bg-[#fafafa] relative overflow-hidden">
+      
+      {/* Decorative background orbs */}
+      <div className="absolute top-1/4 -left-40 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Rating Overview Banner */}
@@ -136,7 +232,7 @@ export default function ReviewsTrust() {
           </div>
         </div>
 
-        {/* Section Heading */}
+        {/* Section Heading & Controls */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
             <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
@@ -149,24 +245,24 @@ export default function ReviewsTrust() {
             Real stories and ratings from families and professionals who rely on Happy Way Medical Center for their health.
           </p>
 
-          {/* Review Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6">
+          {/* Interactive Controls & Filters */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-5 sm:mt-6">
             <button
               onClick={() => setFilter('all')}
               className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all ${
                 filter === 'all'
                   ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
               }`}
             >
-              All Reviews ({reviews.length})
+              All Reviews ({reviewsList.length})
             </button>
             <button
               onClick={() => setFilter('dentistry')}
               className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all ${
                 filter === 'dentistry'
                   ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
               }`}
             >
               Dental & Smile
@@ -176,7 +272,7 @@ export default function ReviewsTrust() {
               className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all ${
                 filter === 'general'
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
               }`}
             >
               General Clinic & Lab
@@ -186,61 +282,92 @@ export default function ReviewsTrust() {
               className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all ${
                 filter === 'pediatrics'
                   ? 'bg-emerald-600 text-white shadow-md'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
               }`}
             >
               Pediatrics & Family
             </button>
+
+            {/* Play / Pause Toggle Button */}
+            <button
+              onClick={() => setIsPaused(!isPaused)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold text-slate-600 bg-white hover:bg-slate-100 border border-slate-200 transition"
+              title={isPaused ? "Play Auto-Scroll" : "Pause Auto-Scroll"}
+            >
+              {isPaused ? (
+                <>
+                  <Play className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />
+                  <span>Play Scroll</span>
+                </>
+              ) : (
+                <>
+                  <Pause className="w-3.5 h-3.5 text-slate-500" />
+                  <span>Pause</span>
+                </>
+              )}
+            </button>
           </div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-          {filteredReviews.map((rev, index) => (
-            <div
-              key={index}
-              className="rounded-3xl p-5 sm:p-7 bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-emerald-400/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+      </div>
+
+      {/* Infinite Auto-Sliding Loop Carousel Container */}
+      <div className="relative w-full overflow-hidden py-4">
+        
+        {/* Left & Right Soft Edge Fading Gradients */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 md:w-44 bg-gradient-to-l from-[#fafafa] via-[#fafafa]/80 to-transparent z-10" />
+
+        <div className="space-y-4 sm:space-y-6">
+          
+          {/* Row 1: Smooth Infinite Scrolling Left */}
+          <div 
+            className="flex overflow-hidden"
+            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}
+          >
+            <div 
+              className="marquee-track flex gap-4 sm:gap-6 py-2 px-3"
+              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
             >
-              <div>
-                <div className="flex items-center justify-between mb-3.5 sm:mb-4">
-                  <div className="flex text-amber-400">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400">
-                    {rev.date}
-                  </span>
-                </div>
-
-                <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600/25 mb-1.5 sm:mb-2 group-hover:text-emerald-600/40 transition-colors" />
-                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
-                  &ldquo;{rev.comment}&rdquo;
-                </p>
-              </div>
-
-              <div className="pt-4 sm:pt-5 mt-4 sm:mt-6 border-t border-slate-200/60">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl ${rev.avatarBg} font-bold text-xs flex items-center justify-center shrink-0`}>
-                      {rev.initials}
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 text-xs sm:text-sm font-heading truncate">{rev.name}</h4>
-                      <p className="text-[10px] sm:text-[11px] text-slate-500 truncate">{rev.department}</p>
-                    </div>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-emerald-800 bg-emerald-100/80 border border-emerald-200 px-2 py-0.5 rounded-full shrink-0">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    {rev.verified.includes('Practo') ? 'Practo' : 'Verified'}
-                  </span>
-                </div>
-              </div>
+              {loopRowOne.map((rev, idx) => renderReviewCard(rev, idx))}
             </div>
-          ))}
+          </div>
+
+          {/* Row 2: Smooth Infinite Scrolling Right (Reverse Loop) */}
+          <div 
+            className="flex overflow-hidden"
+            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}
+          >
+            <div 
+              className="marquee-track-reverse flex gap-4 sm:gap-6 py-2 px-3"
+              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            >
+              {loopRowTwo.map((rev, idx) => renderReviewCard(rev, idx + 100))}
+            </div>
+          </div>
+
         </div>
 
       </div>
+
+      {/* Bottom Hint and External Reviews Link */}
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-xs">
+        <p className="flex items-center gap-1.5 text-slate-500">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>Cards pause automatically when hovered or touched</span>
+        </p>
+        
+        <a 
+          href="https://maps.google.com/?cid=12044810795415777821" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 hover:text-emerald-800 hover:underline transition"
+        >
+          <span>View all 405+ Reviews on Google Maps</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
+
     </section>
   );
 }

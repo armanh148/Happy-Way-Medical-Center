@@ -67,17 +67,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
 
         {/* Hero Main Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+        <div className="text-center max-w-5xl mx-auto mb-10 sm:mb-14 lg:mb-16 px-2">
           <div className="inline-block mb-2.5 sm:mb-3">
             <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-800 bg-emerald-100/80 border border-emerald-300/70 px-3 sm:px-4 py-1 rounded-full">
               Sharjah&apos;s Trusted Healthcare & Dental Center
             </span>
           </div>
 
-          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-slate-900 leading-[1.15] sm:leading-[1.08] break-words">
-            EXCEPTIONAL CARE & <br className="hidden sm:block" />
-            <span className="brand-gradient-text">ADVANCED DENTAL SOLUTIONS</span> <br className="hidden sm:block" />
-            IN SHARJAH
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-[40px] lg:text-[34px] xl:text-[44px] 2xl:text-[52px] font-black font-heading tracking-tight text-slate-900 leading-[1.16] sm:leading-[1.12]">
+            <span className="block">EXCEPTIONAL CARE &amp;</span>
+            <span className="block mt-1 sm:mt-2">
+              <span className="brand-gradient-text">ADVANCED DENTAL SOLUTIONS</span>{' '}
+              <span className="inline-block">IN SHARJAH</span>
+            </span>
           </h1>
 
           <p className="mt-3.5 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed px-1">
