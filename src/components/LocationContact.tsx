@@ -37,13 +37,13 @@ export default function LocationContact() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm border border-teal-200/80">
-            <MapPin className="w-3.5 h-3.5 text-teal-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm border border-emerald-200/80">
+            <MapPin className="w-3.5 h-3.5 text-emerald-600" />
             <span>Visit Us in Rolla, Sharjah</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight leading-tight">
             Conveniently Located In The Heart Of <br className="hidden sm:block" />
-            <span className="teal-gradient-text">Al Rolla, Sharjah</span>
+            <span className="brand-gradient-text">Al Rolla, Sharjah</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Easily accessible with surrounding municipal parking, direct elevator access to the 3rd floor, and within a 2-minute walk from Rolla Square bus terminal.
@@ -62,7 +62,7 @@ export default function LocationContact() {
               {/* Card 1: Address */}
               <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="w-11 h-11 rounded-2xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-4">
                     <Building className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-slate-900 text-base font-heading">Clinic Address</h3>
@@ -70,7 +70,7 @@ export default function LocationContact() {
                     3rd Floor, The Residence 7 Bldg,<br />
                     Al Rolla St, Sharjah, United Arab Emirates
                   </p>
-                  <p className="text-[11px] text-teal-700 font-semibold mt-2 flex items-center gap-1.5">
+                  <p className="text-[11px] text-emerald-700 font-semibold mt-2 flex items-center gap-1.5">
                     <Car className="w-3.5 h-3.5" />
                     <span>Paid RTA & Clinic Parking Nearby</span>
                   </p>
@@ -80,7 +80,7 @@ export default function LocationContact() {
                     href="https://maps.google.com/?q=The+Residence+7+Al+Rolla+Sharjah"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold text-teal-700 hover:text-teal-800 inline-flex items-center gap-1.5 group"
+                    className="text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1.5 group"
                   >
                     <span>Open in Google Maps</span>
                     <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
@@ -91,13 +91,13 @@ export default function LocationContact() {
               {/* Card 2: Contact & Helpline */}
               <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="w-11 h-11 rounded-2xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200/60 text-blue-700 flex items-center justify-center mb-4">
                     <Phone className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold text-slate-900 text-base font-heading">Direct Helpline & WhatsApp</h3>
                   <p className="text-slate-600 text-xs mt-1.5 leading-relaxed">
-                    Main Desk: <strong className="text-slate-900">+971 58 684 6600</strong><br />
-                    Immediate multilingual front desk support
+                    Mobile: <strong className="text-slate-900">+971 58 684 6600</strong><br />
+                    Landline: <strong className="text-slate-900">06 530 0540</strong>
                   </p>
                   <p className="text-[11px] text-emerald-600 font-semibold mt-2 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -109,7 +109,13 @@ export default function LocationContact() {
                     href="tel:+971586846600"
                     className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition shadow-sm"
                   >
-                    Call Now
+                    Call Mobile
+                  </a>
+                  <a
+                    href="tel:065300540"
+                    className="px-3.5 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition shadow-sm"
+                  >
+                    Landline
                   </a>
                   <a
                     href="https://wa.me/971586846600"
@@ -129,7 +135,7 @@ export default function LocationContact() {
             <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2.5">
-                  <Clock className="w-5 h-5 text-teal-600" />
+                  <Clock className="w-5 h-5 text-emerald-600" />
                   <h3 className="font-bold text-slate-900 text-base font-heading">Clinical Operating Hours</h3>
                 </div>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold">
@@ -140,13 +146,13 @@ export default function LocationContact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
                   <span className="font-semibold text-slate-700">Saturday – Thursday</span>
-                  <span className="font-bold text-teal-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                  <span className="font-bold text-emerald-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
                     9:00 AM – 10:00 PM
                   </span>
                 </div>
                 <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
                   <span className="font-semibold text-slate-700">Friday (Afternoon)</span>
-                  <span className="font-bold text-teal-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                  <span className="font-bold text-blue-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
                     2:00 PM – 9:00 PM
                   </span>
                 </div>
@@ -159,18 +165,18 @@ export default function LocationContact() {
               <div className="absolute inset-0 bg-slate-950 opacity-95">
                 <svg className="w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <pattern id="grid-map" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14b8a6" strokeWidth="0.8" />
+                    <pattern id="grid-map-green" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#22c55e" strokeWidth="0.8" />
                     </pattern>
                   </defs>
-                  <rect width="100%" height="100%" fill="url(#grid-map)" />
+                  <rect width="100%" height="100%" fill="url(#grid-map-green)" />
                 </svg>
               </div>
 
               {/* Map Pin UI Overlay */}
               <div className="relative z-10 p-8 flex flex-col items-center justify-center text-center h-full">
-                <div className="w-16 h-16 rounded-full bg-teal-500/20 border-2 border-teal-400 text-teal-300 flex items-center justify-center shadow-glow-teal animate-pulse mb-3.5">
-                  <MapPin className="w-8 h-8 text-teal-300" />
+                <div className="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-300 flex items-center justify-center shadow-glow-green animate-pulse mb-3.5">
+                  <MapPin className="w-8 h-8 text-emerald-300" />
                 </div>
                 
                 <h4 className="text-xl sm:text-2xl font-black font-heading text-white">
@@ -178,7 +184,7 @@ export default function LocationContact() {
                 </h4>
                 <p className="text-slate-300 text-xs sm:text-sm mt-1.5 max-w-md leading-relaxed">
                   3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah <br />
-                  <span className="text-teal-400 font-semibold">(Directly opposite Rolla Square & Rolla Bus Station)</span>
+                  <span className="text-emerald-400 font-semibold">(Directly opposite Rolla Square & Rolla Bus Station)</span>
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-3 justify-center">
@@ -186,7 +192,7 @@ export default function LocationContact() {
                     href="https://maps.google.com/?q=The+Residence+7+Al+Rolla+Sharjah"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-shine px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-lg shadow-teal-500/25"
+                    className="btn-shine px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-lg shadow-emerald-500/25"
                   >
                     <Navigation className="w-4 h-4" />
                     <span>Get GPS Directions</span>
@@ -195,19 +201,26 @@ export default function LocationContact() {
                     href="tel:+971586846600"
                     className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition flex items-center gap-2"
                   >
-                    <Phone className="w-4 h-4 text-teal-400" />
-                    <span>Call Desk</span>
+                    <Phone className="w-4 h-4 text-emerald-400" />
+                    <span>Call Mobile</span>
+                  </a>
+                  <a
+                    href="tel:065300540"
+                    className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition flex items-center gap-2"
+                  >
+                    <Phone className="w-4 h-4 text-blue-400" />
+                    <span>06 530 0540</span>
                   </a>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-6 text-[11px] text-slate-400">
                   <span className="flex items-center gap-1.5">
-                    <Compass className="w-3.5 h-3.5 text-teal-400" />
+                    <Compass className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Rolla Bus Terminal: 2 Min Walk</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Building className="w-3.5 h-3.5 text-teal-400" />
-                    <span>High-Speed Passenger Elevators</span>
+                    <Building className="w-3.5 h-3.5 text-blue-400" />
+                    <span>Elevator to 3rd Floor</span>
                   </span>
                 </div>
               </div>
@@ -218,7 +231,7 @@ export default function LocationContact() {
           {/* Right Column (5 cols): Direct Inquiry & Quick Booking Form */}
           <div className="lg:col-span-5 bg-white rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-xl">
             <div className="mb-6">
-              <span className="text-teal-600 font-bold text-xs uppercase tracking-wider block mb-1">
+              <span className="text-emerald-700 font-bold text-xs uppercase tracking-wider block mb-1">
                 Fast Clinical Helpdesk
               </span>
               <h3 className="text-2xl font-black font-heading text-slate-900 tracking-tight">
@@ -230,13 +243,13 @@ export default function LocationContact() {
             </div>
 
             {formSubmitted ? (
-              <div className="text-center py-12 bg-teal-50/70 rounded-2xl border border-teal-200/80 p-6 animate-in fade-in">
-                <div className="w-14 h-14 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-3.5 shadow-md">
+              <div className="text-center py-12 bg-emerald-50/70 rounded-2xl border border-emerald-200/80 p-6 animate-in fade-in">
+                <div className="w-14 h-14 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-3.5 shadow-md">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-slate-900 font-heading">Inquiry Received Successfully</h4>
                 <p className="text-slate-600 text-xs sm:text-sm mt-2 max-w-xs mx-auto">
-                  Thank you <strong className="text-slate-900">{formData.name || 'Patient'}</strong>! Our clinical front-desk will contact you on <strong className="text-teal-700">{formData.phone}</strong> promptly.
+                  Thank you <strong className="text-slate-900">{formData.name || 'Patient'}</strong>! Our clinical front-desk will contact you on <strong className="text-emerald-700">{formData.phone}</strong> promptly.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
@@ -257,7 +270,7 @@ export default function LocationContact() {
                     placeholder="e.g. Ahmed Sultan"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
@@ -271,7 +284,7 @@ export default function LocationContact() {
                     placeholder="+971 5X XXX XXXX"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
@@ -282,16 +295,15 @@ export default function LocationContact() {
                   <select
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 bg-white transition"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-500 text-slate-900 bg-white transition"
                   >
                     <option value="General Consultation">General Medicine & Routine Health</option>
                     <option value="Advanced Dentistry">Advanced Dentistry & Laser Whitening</option>
-                    <option value="Orthodontics & Braces">Orthodontics & Hollywood Smile</option>
+                    <option value="Gynecology & Obstetrics">Gynecology & Obstetrics</option>
                     <option value="Pediatrics">Pediatrics & Baby Vaccination</option>
                     <option value="Cardiology">Cardiology & ECG Diagnostics</option>
                     <option value="Orthopedics">Orthopedics & Joint Care</option>
-                    <option value="Dermatology">Dermatology & Cosmetology</option>
-                    <option value="Insurance Question">Insurance Coverage Pre-Check</option>
+                    <option value="Insurance Question">Insurance Cashless Coverage Pre-Check</option>
                   </select>
                 </div>
 
@@ -301,18 +313,18 @@ export default function LocationContact() {
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="How can our clinical team assist you today?"
+                    placeholder="How can our doctors assist you today?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/25 focus:border-emerald-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-shine w-full py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 active:scale-[0.99] shadow-lg shadow-teal-900/15 border border-slate-700"
+                  className="btn-shine w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 active:scale-[0.99] shadow-lg shadow-emerald-900/15"
                 >
-                  <Send className="w-4 h-4 text-teal-400" />
+                  <Send className="w-4 h-4 text-emerald-200" />
                   <span>Submit Clinical Inquiry</span>
                 </button>
               </form>

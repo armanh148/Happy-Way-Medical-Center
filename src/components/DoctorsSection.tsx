@@ -21,7 +21,8 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 142,
       availability: 'Available Today • 4 Slots Left',
       specialties: ['Invisalign Certified', 'Cosmetic Veneers', 'Laser Gum Therapy', 'Painless Implants'],
-      image: '/images/doctor-consulting.jpg'
+      image: '/images/doctor-consulting.jpg',
+      theme: 'emerald'
     },
     {
       name: 'Dr. Tariq Mansour',
@@ -34,7 +35,8 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 118,
       availability: 'Available Today • Walk-ins Welcomed',
       specialties: ['Hypertension & Diabetes', 'Executive Health Check', 'Cardiovascular Risk', 'Geriatric Care'],
-      image: '/images/clinic-interior.jpg'
+      image: '/images/clinic-interior.jpg',
+      theme: 'blue'
     },
     {
       name: 'Dr. Maya Joseph',
@@ -47,7 +49,8 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 95,
       availability: 'Evening Clinic • 5:00 PM – 9:30 PM',
       specialties: ['Newborn Assessments', 'Pediatric Asthma', 'Immunization Protocols', 'Growth Milestones'],
-      image: '/images/dental-suite.jpg'
+      image: '/images/dental-suite.jpg',
+      theme: 'emerald'
     }
   ];
 
@@ -57,13 +60,13 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm border border-teal-200/80">
-            <Award className="w-3.5 h-3.5 text-teal-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm border border-emerald-200/80">
+            <Award className="w-3.5 h-3.5 text-emerald-600" />
             <span>Dedicated Medical Specialists</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight leading-tight">
             Consult With Sharjah&apos;s Leading <br className="hidden sm:block" />
-            <span className="teal-gradient-text">Healthcare Clinicians</span>
+            <span className="brand-gradient-text">Healthcare Clinicians</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Our physicians blend international post-graduate qualifications with compassionate, patient-centered communication.
@@ -75,7 +78,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
           {doctors.map((doctor, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl hover:border-teal-400/50 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl hover:border-emerald-400/50 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Doctor Visual Header with Photo */}
@@ -102,7 +105,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-[11px] font-bold text-teal-300 uppercase tracking-widest block mb-1">
+                    <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-widest block mb-1">
                       {doctor.department}
                     </span>
                     <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
@@ -113,8 +116,8 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
 
                 {/* Doctor Details Body */}
                 <div className="p-6 sm:p-7 space-y-4">
-                  <div className="inline-block bg-teal-50 border border-teal-200/80 px-3 py-1 rounded-xl">
-                    <p className="text-xs font-bold text-teal-800">
+                  <div className="inline-block bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-xl">
+                    <p className="text-xs font-bold text-emerald-800">
                       {doctor.role}
                     </p>
                   </div>
@@ -156,9 +159,9 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
               <div className="p-6 sm:p-7 pt-0">
                 <button
                   onClick={() => onOpenBooking(doctor.department)}
-                  className="btn-shine w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-teal-600 text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-teal-600/25"
+                  className="btn-shine w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-emerald-600/25"
                 >
-                  <Calendar className="w-3.5 h-3.5 text-teal-400" />
+                  <Calendar className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Book Consultation With {doctor.name.split(' ')[1]}</span>
                 </button>
               </div>

@@ -10,7 +10,7 @@ import ReviewsTrust from '@/components/ReviewsTrust';
 import LocationContact from '@/components/LocationContact';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
-import { MessageSquare, Calendar, Sparkles } from 'lucide-react';
+import { MessageSquare, Calendar } from 'lucide-react';
 
 export default function HomePage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,14 +24,14 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-teal-500 selection:text-white relative">
-      {/* Navigation */}
+    <main className="min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-emerald-600 selection:text-white relative">
+      {/* Navigation with Happy Way Logo Colors */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
-      {/* Hero Section with 3-Column Interactive Grid */}
+      {/* Hero Section */}
       <Hero onOpenBooking={handleOpenBooking} />
 
-      {/* Services & Clinical Departments Grid */}
+      {/* Services & Clinical Departments Grid (includes Gynecology & Dental) */}
       <ServicesGrid onOpenBooking={handleOpenBooking} />
 
       {/* Digital Patient App & EMR Section */}
@@ -76,12 +76,12 @@ export default function HomePage() {
           <MessageSquare className="w-6 h-6 fill-current" />
         </a>
 
-        {/* Quick Consultation Booking Pill */}
+        {/* Quick Consultation Booking Pill in Brand Green & Blue */}
         <button
           onClick={() => handleOpenBooking()}
-          className="btn-shine px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-extrabold uppercase tracking-wider shadow-2xl flex items-center gap-2.5 hover:scale-105 active:scale-95 transition-all border border-slate-700/80 shadow-slate-950/20"
+          className="btn-shine px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-extrabold uppercase tracking-wider shadow-2xl flex items-center gap-2.5 hover:scale-105 active:scale-95 transition-all border border-emerald-400/30 shadow-emerald-900/20"
         >
-          <Calendar className="w-4 h-4 text-teal-400" />
+          <Calendar className="w-4 h-4 text-emerald-200" />
           <span className="hidden sm:inline">Book Consultation</span>
           <span className="sm:hidden">Book Now</span>
         </button>

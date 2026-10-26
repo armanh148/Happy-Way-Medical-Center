@@ -11,34 +11,41 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs border-t border-slate-800">
       {/* Emergency & Quick Consultation Callout Banner */}
-      <div className="bg-gradient-to-r from-teal-950 via-slate-900 to-teal-950 border-b border-slate-800/90 py-4 px-4">
+      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-blue-950 border-b border-slate-800/90 py-4 px-4">
         <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-white font-bold text-xs sm:text-sm">
               Urgent Medical Query or Consultation Needed?
             </span>
             <span className="text-slate-400 hidden md:inline text-xs">
-              Front-desk telephone hotline active daily 9:00 AM – 10:00 PM.
+              Front-desk hotline active daily 9:00 AM – 10:00 PM.
             </span>
           </div>
 
           <div className="flex items-center gap-3">
             <a
               href="tel:+971586846600"
-              className="px-4 py-2 rounded-xl bg-teal-500 text-slate-950 font-bold text-xs hover:bg-teal-400 transition inline-flex items-center gap-2 shadow-sm"
+              className="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-500 transition inline-flex items-center gap-2 shadow-sm"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Call +971 58 684 6600</span>
             </a>
             <a
+              href="tel:065300540"
+              className="px-4 py-2 rounded-xl bg-blue-700 text-white font-bold text-xs hover:bg-blue-600 transition inline-flex items-center gap-1.5 shadow-sm"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>06 530 0540</span>
+            </a>
+            <a
               href="https://wa.me/971586846600"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-500 transition inline-flex items-center gap-1.5 shadow-sm"
+              className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs hover:bg-emerald-400 transition inline-flex items-center gap-1.5 shadow-sm"
             >
               <MessageSquare className="w-3.5 h-3.5" />
-              <span>WhatsApp Us</span>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
@@ -51,14 +58,15 @@ export default function Footer() {
           {/* Brand Info (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-teal-700 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-teal-600/20">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-emerald-600/20">
                 <Activity className="w-6 h-6 text-white stroke-[2.4]" />
               </div>
               <div>
-                <span className="text-xl font-black font-heading text-white tracking-tight block">
-                  Happy Way Medical Center
-                </span>
-                <span className="text-[10px] uppercase tracking-widest text-teal-400 font-bold block -mt-1">
+                <div className="flex items-center gap-1.5 text-xl font-black font-heading tracking-tight leading-none">
+                  <span className="text-emerald-400">HAPPY</span>
+                  <span className="text-blue-400">WAY</span>
+                </div>
+                <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold block mt-1">
                   Multi-Specialty & Advanced Dental Clinic • Sharjah
                 </span>
               </div>
@@ -70,15 +78,15 @@ export default function Footer() {
 
             <div className="pt-2 text-xs text-slate-400 space-y-2">
               <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-teal-400 shrink-0" />
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah, UAE</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>+971 58 684 6600 (Telephone & WhatsApp)</span>
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <span>+971 58 684 6600 / 06 530 0540</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>UAE MOHAP Licensed Facility • Practo Health Partner</span>
               </div>
             </div>
@@ -90,13 +98,13 @@ export default function Footer() {
               Clinical Departments
             </h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#services" className="hover:text-teal-400 transition">Advanced Dentistry & Implants</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">Orthodontics & Hollywood Smile</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">General & Internal Medicine</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">Pediatrics & Baby Vaccination</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">Cardiology & ECG Diagnostics</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">Orthopedics & Joint Care</a></li>
-              <li><a href="#services" className="hover:text-teal-400 transition">Dermatology & Skin Aesthetics</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Advanced Dentistry & Implants</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Orthodontics & Hollywood Smile</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">General & Family Medicine</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Gynecology & Obstetrics</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Pediatrics & Baby Vaccination</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Cardiology & ECG Diagnostics</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition">Orthopedics & Joint Care</a></li>
             </ul>
           </div>
 
@@ -106,12 +114,12 @@ export default function Footer() {
               Patient Resources
             </h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#app-features" className="hover:text-teal-400 transition">Patient Portal & Lab App</a></li>
-              <li><a href="#doctors" className="hover:text-teal-400 transition">Our Specialists & Doctors</a></li>
-              <li><a href="#reviews" className="hover:text-teal-400 transition">Verified Reviews (4.7 ★)</a></li>
-              <li><a href="#location" className="hover:text-teal-400 transition">Clinic Location & Parking</a></li>
-              <li><a href="#app-features" className="hover:text-teal-400 transition">Cashless Insurance Partners</a></li>
-              <li><a href="https://wa.me/971586846600" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition">WhatsApp Direct Helpline</a></li>
+              <li><a href="#app-features" className="hover:text-emerald-400 transition">Patient Portal & Lab App</a></li>
+              <li><a href="#doctors" className="hover:text-emerald-400 transition">Our Specialists & Doctors</a></li>
+              <li><a href="#reviews" className="hover:text-emerald-400 transition">Verified Reviews (4.7 ★)</a></li>
+              <li><a href="#location" className="hover:text-emerald-400 transition">Clinic Location & Parking</a></li>
+              <li><a href="#app-features" className="hover:text-emerald-400 transition">Cashless Insurance Partners</a></li>
+              <li><a href="https://wa.me/971586846600" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition">WhatsApp Direct Helpline</a></li>
             </ul>
           </div>
 
@@ -131,7 +139,7 @@ export default function Footer() {
               </div>
               <div className="pt-2 border-t border-slate-800/80 text-[10px] text-emerald-400 font-semibold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Emergency slots available daily</span>
+                <span>Walk-in consultations welcomed</span>
               </div>
             </div>
 
@@ -139,7 +147,7 @@ export default function Footer() {
               onClick={scrollToTop}
               className="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider"
             >
-              <ArrowUp className="w-3.5 h-3.5 text-teal-400" />
+              <ArrowUp className="w-3.5 h-3.5 text-emerald-400" />
               <span>Back to Top</span>
             </button>
           </div>
