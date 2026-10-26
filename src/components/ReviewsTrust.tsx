@@ -136,7 +136,7 @@ export default function ReviewsTrust() {
   const renderReviewCard = (rev: Review, idx: number) => (
     <div
       key={idx}
-      className="w-[300px] xs:w-[340px] sm:w-[390px] shrink-0 rounded-3xl p-5 sm:p-6 bg-white hover:bg-slate-50/70 border border-slate-200/90 hover:border-emerald-500/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group select-none"
+      className="w-[275px] xs:w-[325px] sm:w-[385px] shrink-0 rounded-3xl p-4 sm:p-6 bg-white hover:bg-slate-50/70 border border-slate-200/90 hover:border-emerald-500/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group select-none"
     >
       <div>
         <div className="flex items-center justify-between mb-3">
