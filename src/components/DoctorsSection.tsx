@@ -21,7 +21,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 142,
       availability: 'Available Today • 4 Slots',
       specialties: ['Invisalign Certified', 'Cosmetic Veneers', 'Laser Gum Therapy', 'Painless Implants'],
-      image: '/images/doctor-consulting.jpg'
+      image: '/images/doctor-sarah.jpg'
     },
     {
       name: 'Dr. Tariq Mansour',
@@ -34,7 +34,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 118,
       availability: 'Available Today • Walk-ins',
       specialties: ['Hypertension & Diabetes', 'Executive Health Check', 'Cardiovascular Risk', 'Geriatric Care'],
-      image: '/images/clinic-interior.jpg'
+      image: '/images/doctor-tariq.jpg'
     },
     {
       name: 'Dr. Maya Joseph',
@@ -47,7 +47,7 @@ export default function DoctorsSection({ onOpenBooking }: DoctorsSectionProps) {
       reviewsCount: 95,
       availability: 'Evening Clinic • 5:00 PM',
       specialties: ['Newborn Assessments', 'Pediatric Asthma', 'Immunization Protocols', 'Growth Milestones'],
-      image: '/images/dental-suite.jpg'
+      image: '/images/doctor-consulting.jpg'
     }
   ];
 
