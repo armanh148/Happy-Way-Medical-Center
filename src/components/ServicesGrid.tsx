@@ -12,7 +12,10 @@ import {
   Check, 
   Clock, 
   Shield, 
-  UserCheck 
+  UserCheck,
+  CheckCircle2,
+  Calendar,
+  HeartPulse
 } from 'lucide-react';
 
 interface ServicesGridProps {
@@ -28,8 +31,10 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       name: 'Advanced Dentistry',
       badge: 'Specialty Center',
       icon: Sparkles,
-      color: 'teal',
-      description: 'Comprehensive restorative, surgical, and cosmetic dental treatments utilizing pain-free modern technology.',
+      accentColor: 'from-emerald-500 to-green-500',
+      badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
+      iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+      description: 'Comprehensive restorative, cosmetic, and surgical dental treatments utilizing pain-free modern technology and 3D intraoral scans.',
       features: [
         'Cosmetic veneers & Hollywood smile design',
         'Painless root canal therapy & dental implants',
@@ -44,8 +49,10 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       name: 'General & Internal Medicine',
       badge: 'Primary Care',
       icon: Stethoscope,
-      color: 'cyan',
-      description: 'Expert diagnostic evaluation for acute and chronic conditions, preventive wellness, and routine family medical exams.',
+      accentColor: 'from-blue-600 to-indigo-600',
+      badgeBg: 'bg-blue-50 text-blue-700 border-blue-200/80',
+      iconBg: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+      description: 'Expert diagnostic evaluation for acute and chronic conditions, preventive wellness protocols, and routine family medical exams.',
       features: [
         'Comprehensive health checkups & blood profiles',
         'Diabetes, hypertension & cholesterol management',
@@ -56,12 +63,32 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       timing: 'Same-day walk-ins welcomed'
     },
     {
+      id: 'gynecology',
+      name: 'Gynecology & Obstetrics',
+      badge: "Women's Health",
+      icon: HeartPulse,
+      accentColor: 'from-emerald-600 to-blue-600',
+      badgeBg: 'bg-emerald-50 text-emerald-800 border-emerald-200/80',
+      iconBg: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
+      description: 'Dedicated women’s wellness, prenatal checkups, hormonal health, ultrasound screenings, and compassionate gynecological care.',
+      features: [
+        'Routine antenatal care & pregnancy monitoring',
+        'Pelvic ultrasound & women’s preventative exams',
+        'PCOS, menstrual irregularities & hormone care',
+        'Confidential, compassionate clinical environment'
+      ],
+      leadDoctor: 'Specialist Gynecologist (Female Doctor Available)',
+      timing: 'Morning & evening clinics'
+    },
+    {
       id: 'pediatrics',
       name: 'Pediatrics & Child Care',
       badge: 'Family Focus',
       icon: Baby,
-      color: 'amber',
-      description: 'Gentle, child-centric medical care from newborn screenings and developmental milestones to vaccinations and childhood illness.',
+      accentColor: 'from-amber-500 to-orange-500',
+      badgeBg: 'bg-amber-50 text-amber-700 border-amber-200/80',
+      iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+      description: 'Gentle, child-friendly medical care from newborn screenings and developmental milestones to vaccinations and pediatric illnesses.',
       features: [
         'Routine childhood vaccinations & immunizations',
         'Growth, nutrition & developmental milestone monitoring',
@@ -76,7 +103,9 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       name: 'Cardiology & Heart Health',
       badge: 'Diagnostic Lab',
       icon: Heart,
-      color: 'rose',
+      accentColor: 'from-rose-500 to-pink-500',
+      badgeBg: 'bg-rose-50 text-rose-700 border-rose-200/80',
+      iconBg: 'bg-rose-500/10 text-rose-600 border-rose-500/20',
       description: 'Advanced cardiovascular risk assessment, diagnostic testing, and preventative management for lasting heart health.',
       features: [
         '12-Lead ECG & digital Holter monitoring',
@@ -92,7 +121,9 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       name: 'Orthopedics & Joint Care',
       badge: 'Surgical & Rehab',
       icon: Bone,
-      color: 'indigo',
+      accentColor: 'from-blue-700 to-blue-900',
+      badgeBg: 'bg-blue-50 text-blue-800 border-blue-200/80',
+      iconBg: 'bg-blue-500/10 text-blue-700 border-blue-500/20',
       description: 'Specialized care for joint pain, musculoskeletal injuries, spine alignment, and sports medicine rehabilitation.',
       features: [
         'Arthritis, knee, hip & shoulder pain therapies',
@@ -103,22 +134,6 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
       leadDoctor: 'Dr. Robert Mathews (Specialist Orthopedic Surgeon)',
       timing: 'Mon – Sat'
     },
-    {
-      id: 'dermatology',
-      name: 'Dermatology & Cosmetology',
-      badge: 'Aesthetics',
-      icon: Scan,
-      color: 'purple',
-      description: 'Clinical dermatology for chronic skin conditions combined with cutting-edge medical aesthetic and rejuvenation treatments.',
-      features: [
-        'Acne, eczema, psoriasis & pigment correction',
-        'Hydrafacial, medical chemical peels & glow therapy',
-        'Mole mapping, skin cancer screening & biopsy',
-        'Laser skin resurfacing & anti-aging consultations'
-      ],
-      leadDoctor: 'Dr. Laila Al Hosani (Consultant Dermatologist)',
-      timing: 'Evening slots available'
-    },
   ];
 
   const filteredDepts = activeTab === 'all' 
@@ -126,61 +141,66 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
     : departments.filter(d => d.id === activeTab);
 
   return (
-    <section id="services" className="py-16 lg:py-24 bg-white relative">
+    <section id="services" className="py-20 lg:py-28 bg-white relative">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-bold uppercase tracking-wider text-brand-800 mb-3">
-              <Shield className="w-3.5 h-3.5 text-brand-600" />
-              <span>Multi-Specialty Healthcare</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3.5">
+              <Shield className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Multi-Specialty Clinical Excellence</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
-              Comprehensive Departments & Clinical Excellence
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight leading-tight">
+              Comprehensive Departments & <br className="hidden sm:block" />
+              <span className="brand-gradient-text">Specialized Medical Care</span>
             </h2>
-            <p className="mt-2 text-base text-slate-600 max-w-2xl">
-              Modern facilities equipped with state-of-the-art diagnostic instruments, experienced specialists, and patient-first medical protocols.
+            <p className="mt-3 text-base text-slate-600 max-w-2xl leading-relaxed">
+              Equipped with modern diagnostic instruments, certified specialists, and patient-first protocols. All clinical departments support cashless insurance billing.
             </p>
           </div>
 
-          <div className="mt-6 md:mt-0">
+          <div className="shrink-0">
             <button
               onClick={() => onOpenBooking()}
-              className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider shadow-sm transition inline-flex items-center gap-2"
+              className="btn-shine px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-emerald-900/20 transition-all inline-flex items-center gap-2.5 border border-emerald-500/30"
             >
-              <span>Instant Appointment</span>
-              <ArrowRight className="w-4 h-4 text-teal-400" />
+              <Calendar className="w-4 h-4 text-emerald-200" />
+              <span>Book An Appointment</span>
+              <ArrowRight className="w-4 h-4 text-emerald-200" />
             </button>
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
           <button
             onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+            className={`px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all duration-200 ${
               activeTab === 'all'
-                ? 'bg-slate-900 text-white shadow-sm'
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                ? 'bg-slate-900 text-white shadow-md'
+                : 'bg-slate-100 hover:bg-slate-200/80 text-slate-700'
             }`}
           >
-            All Departments (6)
+            All Specialties ({departments.length})
           </button>
-          {departments.map((dept) => (
-            <button
-              key={dept.id}
-              onClick={() => setActiveTab(dept.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
-                activeTab === dept.id
-                  ? 'bg-brand-600 text-white shadow-sm'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-              }`}
-            >
-              <dept.icon className="w-3.5 h-3.5" />
-              <span>{dept.name}</span>
-            </button>
-          ))}
+          {departments.map((dept) => {
+            const Icon = dept.icon;
+            return (
+              <button
+                key={dept.id}
+                onClick={() => setActiveTab(dept.id)}
+                className={`px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 ${
+                  activeTab === dept.id
+                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/25'
+                    : 'bg-slate-100 hover:bg-slate-200/80 text-slate-700'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                <span>{dept.name}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Department Cards Grid */}
@@ -190,32 +210,35 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
             return (
               <div
                 key={dept.id}
-                className="group rounded-3xl bg-slate-50/70 hover:bg-white border border-slate-200/90 hover:border-brand-500/50 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-3xl bg-slate-50/60 hover:bg-white border border-slate-200/80 hover:border-emerald-400/60 p-7 shadow-sm hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
+                {/* Top glowing line on hover */}
+                <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${dept.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center shadow-inner">
-                      <Icon className="w-6 h-6 stroke-[2]" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className={`w-12 h-12 rounded-2xl ${dept.iconBg} border flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-6 h-6 stroke-[2.2]" />
                     </div>
-                    <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-200/70 text-slate-700 uppercase tracking-wider">
+                    <span className={`text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider border ${dept.badgeBg}`}>
                       {dept.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-brand-700 transition">
+                  <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-emerald-700 transition">
                     {dept.name}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {dept.description}
                   </p>
 
-                  <div className="my-5 border-t border-slate-200/60 pt-4 space-y-2">
+                  <div className="my-5 border-t border-slate-200/60 pt-4 space-y-2.5">
                     <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      Key Treatments & Diagnostics
+                      Key Diagnostic & Treatment Procedures
                     </h4>
                     {dept.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                        <Check className="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5" />
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -223,24 +246,24 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
                 </div>
 
                 <div className="border-t border-slate-200/60 pt-4 mt-2">
-                  <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
-                    <div className="flex items-center gap-1">
-                      <UserCheck className="w-3.5 h-3.5 text-brand-600" />
-                      <span className="font-medium text-slate-700 truncate max-w-[170px]">
+                  <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
+                    <div className="flex items-center gap-1.5">
+                      <UserCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="font-semibold text-slate-800 truncate max-w-[170px]">
                         {dept.leadDoctor}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-[11px] text-slate-400">
-                      <Clock className="w-3 h-3" />
+                    <div className="flex items-center gap-1 text-[11px] text-slate-500 bg-white px-2 py-0.5 rounded-lg border border-slate-200">
+                      <Clock className="w-3 h-3 text-slate-400" />
                       <span>{dept.timing}</span>
                     </div>
                   </div>
 
                   <button
                     onClick={() => onOpenBooking(dept.name)}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2 group/cta"
+                    className="w-full py-3 px-4 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-2 group/cta shadow-md hover:shadow-emerald-600/25"
                   >
-                    <span>Book For {dept.name.split(' ')[0]}</span>
+                    <span>Book {dept.name.split(' ')[0]} Visit</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -250,28 +273,30 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
         </div>
 
         {/* Practo Integration Banner */}
-        <div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-slate-700">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-teal-500/20 border border-teal-400/30 text-teal-400 flex items-center justify-center shrink-0">
-              <Shield className="w-6 h-6" />
+        <div className="mt-14 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white p-7 sm:p-9 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-slate-800/90 relative overflow-hidden">
+          <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="flex items-start sm:items-center gap-4 relative z-10">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 flex items-center justify-center shrink-0 shadow-glow-green-sm">
+              <Shield className="w-7 h-7" />
             </div>
             <div>
-              <span className="text-teal-400 font-bold text-xs uppercase tracking-widest">
-                Practo Integrated Healthcare
+              <span className="text-emerald-400 font-bold text-xs uppercase tracking-widest block mb-1">
+                Practo Integrated Healthcare Partner
               </span>
-              <h4 className="text-lg sm:text-xl font-bold font-heading text-white">
-                Existing Practo Patient? Your Profile & Records Sync Seamlessly
+              <h4 className="text-lg sm:text-2xl font-bold font-heading text-white">
+                Existing Practo Patient? Your Profile & Health Records Sync Automatically
               </h4>
-              <p className="text-slate-300 text-xs sm:text-sm mt-0.5">
-                Previously booked Happy Way on Practo? All previous prescriptions, appointment history, and doctor notes automatically synchronize with our new digital health hub.
+              <p className="text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
+                Booked Happy Way Medical Center on Practo before? All your diagnostic prescriptions, past visit notes, and physician history instantly bridge into our clinic portal.
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 relative z-10 w-full md:w-auto">
             <button
               onClick={() => onOpenBooking()}
-              className="px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs tracking-wider uppercase transition shadow-md"
+              className="btn-shine w-full md:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-xs tracking-wider uppercase transition shadow-lg shadow-emerald-500/25"
             >
               Sync & Book Now
             </button>

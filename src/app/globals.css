@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --font-outfit: 'Outfit', sans-serif;
@@ -14,6 +14,8 @@ body {
   background-color: #f8fafc;
   color: #0f172a;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, .font-heading {
@@ -22,30 +24,64 @@ h1, h2, h3, h4, .font-heading {
 
 /* Custom modern aesthetic utilities */
 .glass-dark {
-  background: rgba(17, 24, 39, 0.75);
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-dark {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.teal-gradient-text {
-  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+.brand-gradient-text {
+  background: linear-gradient(135deg, #16a34a 0%, #10b981 35%, #1d4ed8 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-gradient-text {
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue-gradient-text {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-mesh {
+  background-color: #f8fafc;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
-    radial-gradient(at 85% 20%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 90%, rgba(15, 23, 42, 0.03) 0px, transparent 50%);
+    radial-gradient(at 10% 15%, rgba(34, 197, 94, 0.09) 0px, transparent 55%),
+    radial-gradient(at 90% 12%, rgba(37, 99, 235, 0.09) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(22, 163, 74, 0.05) 0px, transparent 50%),
+    linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+}
+
+.dark-mesh {
+  background-image: 
+    radial-gradient(at 20% 20%, rgba(34, 197, 94, 0.15) 0px, transparent 55%),
+    radial-gradient(at 80% 30%, rgba(37, 99, 235, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(21, 128, 61, 0.08) 0px, transparent 60%);
 }
 
 .card-hover-effect {
@@ -54,12 +90,49 @@ h1, h2, h3, h4, .font-heading {
 
 .card-hover-effect:hover {
   transform: translateY(-6px);
-  box-shadow: 0 25px 35px -10px rgba(13, 148, 136, 0.18), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 25px 40px -12px rgba(22, 163, 74, 0.18), 0 10px 15px -5px rgba(0, 0, 0, 0.03);
 }
+
+.glow-border-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-border-hover:hover {
+  border-color: rgba(34, 197, 94, 0.45);
+  box-shadow: 0 0 25px -4px rgba(34, 197, 94, 0.25);
+}
+
+/* Luxury button shine */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+}
+
+.btn-shine:hover::after {
+  left: 140%;
+}
+
 
 /* Smooth custom scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
@@ -67,7 +140,9 @@ h1, h2, h3, h4, .font-heading {
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 9999px;
+  border: 2px solid #f1f5f9;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+

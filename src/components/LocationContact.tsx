@@ -11,7 +11,10 @@ import {
   CheckCircle2, 
   Calendar,
   Building,
-  ExternalLink
+  ExternalLink,
+  MessageSquare,
+  Car,
+  Compass
 } from 'lucide-react';
 
 export default function LocationContact() {
@@ -29,20 +32,21 @@ export default function LocationContact() {
   };
 
   return (
-    <section id="location" className="py-16 lg:py-24 bg-slate-50 relative">
+    <section id="location" className="py-20 lg:py-28 bg-slate-50 relative">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-sm border border-teal-200/80">
             <MapPin className="w-3.5 h-3.5 text-teal-600" />
-            <span>Visit Us in Sharjah</span>
+            <span>Visit Us in Rolla, Sharjah</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
-            Conveniently Located in Al Rolla, Sharjah
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight leading-tight">
+            Conveniently Located In The Heart Of <br className="hidden sm:block" />
+            <span className="teal-gradient-text">Al Rolla, Sharjah</span>
           </h2>
-          <p className="mt-2 text-slate-600 text-sm sm:text-base">
-            Easily accessible with ample surrounding parking, nearby public transport links, and prompt elevator access.
+          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Easily accessible with surrounding municipal parking, direct elevator access to the 3rd floor, and within a 2-minute walk from Rolla Square bus terminal.
           </p>
         </div>
 
@@ -56,46 +60,54 @@ export default function LocationContact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Card 1: Address */}
-              <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3">
+                  <div className="w-11 h-11 rounded-2xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center mb-4">
                     <Building className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold text-slate-900 text-sm font-heading">Clinic Address</h3>
-                  <p className="text-slate-600 text-xs mt-1 leading-relaxed">
+                  <h3 className="font-bold text-slate-900 text-base font-heading">Clinic Address</h3>
+                  <p className="text-slate-600 text-xs mt-1.5 leading-relaxed">
                     3rd Floor, The Residence 7 Bldg,<br />
                     Al Rolla St, Sharjah, United Arab Emirates
                   </p>
+                  <p className="text-[11px] text-teal-700 font-semibold mt-2 flex items-center gap-1.5">
+                    <Car className="w-3.5 h-3.5" />
+                    <span>Paid RTA & Clinic Parking Nearby</span>
+                  </p>
                 </div>
-                <div className="pt-3 mt-3 border-t border-slate-100">
+                <div className="pt-4 mt-4 border-t border-slate-100">
                   <a
                     href="https://maps.google.com/?q=The+Residence+7+Al+Rolla+Sharjah"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold text-teal-700 hover:text-teal-800 inline-flex items-center gap-1"
+                    className="text-xs font-bold text-teal-700 hover:text-teal-800 inline-flex items-center gap-1.5 group"
                   >
                     <span>Open in Google Maps</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
                   </a>
                 </div>
               </div>
 
               {/* Card 2: Contact & Helpline */}
-              <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3">
+                  <div className="w-11 h-11 rounded-2xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center mb-4">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <h3 className="font-bold text-slate-900 text-sm font-heading">Call & WhatsApp</h3>
-                  <p className="text-slate-600 text-xs mt-1 leading-relaxed">
-                    Direct Reception: <strong>+971 58 684 6600</strong><br />
-                    WhatsApp inquiries handled promptly
+                  <h3 className="font-bold text-slate-900 text-base font-heading">Direct Helpline & WhatsApp</h3>
+                  <p className="text-slate-600 text-xs mt-1.5 leading-relaxed">
+                    Main Desk: <strong className="text-slate-900">+971 58 684 6600</strong><br />
+                    Immediate multilingual front desk support
+                  </p>
+                  <p className="text-[11px] text-emerald-600 font-semibold mt-2 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>WhatsApp Responding in &lt; 5 mins</span>
                   </p>
                 </div>
-                <div className="pt-3 mt-3 border-t border-slate-100 flex items-center gap-2">
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-2">
                   <a
                     href="tel:+971586846600"
-                    className="px-2.5 py-1 bg-slate-900 text-white rounded-lg text-[11px] font-bold"
+                    className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold transition shadow-sm"
                   >
                     Call Now
                   </a>
@@ -103,9 +115,10 @@ export default function LocationContact() {
                     href="https://wa.me/971586846600"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg text-[11px] font-bold"
+                    className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition shadow-sm flex items-center gap-1"
                   >
-                    WhatsApp
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -113,104 +126,121 @@ export default function LocationContact() {
             </div>
 
             {/* Working Hours Card */}
-            <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
-              <div className="flex items-center gap-2 mb-3">
-                <Clock className="w-4 h-4 text-teal-600" />
-                <h3 className="font-bold text-slate-900 text-sm font-heading">Clinical Operating Hours</h3>
+            <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-5 h-5 text-teal-600" />
+                  <h3 className="font-bold text-slate-900 text-base font-heading">Clinical Operating Hours</h3>
+                </div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Open Today
+                </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="font-medium text-slate-700">Saturday – Thursday</span>
-                  <span className="font-bold text-teal-800">9:00 AM – 10:00 PM</span>
+                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <span className="font-semibold text-slate-700">Saturday – Thursday</span>
+                  <span className="font-bold text-teal-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                    9:00 AM – 10:00 PM
+                  </span>
                 </div>
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                  <span className="font-medium text-slate-700">Friday (Afternoon)</span>
-                  <span className="font-bold text-teal-800">2:00 PM – 9:00 PM</span>
+                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <span className="font-semibold text-slate-700">Friday (Afternoon)</span>
+                  <span className="font-bold text-teal-800 bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                    2:00 PM – 9:00 PM
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Interactive Map Visualizer / Directions Preview */}
-            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-slate-900 text-white relative h-72 sm:h-80">
+            <div className="rounded-3xl overflow-hidden border border-slate-800 shadow-xl bg-slate-950 text-white relative min-h-[300px]">
               {/* Map background styling */}
-              <div className="absolute inset-0 bg-[#0f172a] opacity-95">
-                {/* SVG stylistic map grid */}
-                <svg className="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+              <div className="absolute inset-0 bg-slate-950 opacity-95">
+                <svg className="w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2dd4bf" strokeWidth="0.8" />
+                    <pattern id="grid-map" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14b8a6" strokeWidth="0.8" />
                     </pattern>
                   </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
+                  <rect width="100%" height="100%" fill="url(#grid-map)" />
                 </svg>
               </div>
 
               {/* Map Pin UI Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-                <div className="w-14 h-14 rounded-full bg-teal-500/20 border-2 border-teal-400 text-teal-300 flex items-center justify-center shadow-glow-teal animate-pulse mb-3">
-                  <MapPin className="w-7 h-7 text-teal-300" />
+              <div className="relative z-10 p-8 flex flex-col items-center justify-center text-center h-full">
+                <div className="w-16 h-16 rounded-full bg-teal-500/20 border-2 border-teal-400 text-teal-300 flex items-center justify-center shadow-glow-teal animate-pulse mb-3.5">
+                  <MapPin className="w-8 h-8 text-teal-300" />
                 </div>
                 
-                <h4 className="text-xl font-bold font-heading text-white">
+                <h4 className="text-xl sm:text-2xl font-black font-heading text-white">
                   Happy Way Medical Center
                 </h4>
-                <p className="text-slate-300 text-xs mt-1 max-w-sm">
-                  3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah (Opposite Rolla Square)
+                <p className="text-slate-300 text-xs sm:text-sm mt-1.5 max-w-md leading-relaxed">
+                  3rd Floor, The Residence 7 Bldg, Al Rolla St, Sharjah <br />
+                  <span className="text-teal-400 font-semibold">(Directly opposite Rolla Square & Rolla Bus Station)</span>
                 </p>
 
-                <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                <div className="mt-5 flex flex-wrap gap-3 justify-center">
                   <a
                     href="https://maps.google.com/?q=The+Residence+7+Al+Rolla+Sharjah"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center gap-1.5 shadow-md"
+                    className="btn-shine px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-lg shadow-teal-500/25"
                   >
-                    <Navigation className="w-3.5 h-3.5" />
+                    <Navigation className="w-4 h-4" />
                     <span>Get GPS Directions</span>
                   </a>
                   <a
                     href="tel:+971586846600"
-                    className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs border border-white/20 transition flex items-center gap-1.5"
+                    className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition flex items-center gap-2"
                   >
-                    <Phone className="w-3.5 h-3.5" />
+                    <Phone className="w-4 h-4 text-teal-400" />
                     <span>Call Desk</span>
                   </a>
                 </div>
-              </div>
 
-              {/* Landmark badges */}
-              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-slate-400 z-10 hidden sm:flex">
-                <span>Nearby: Rolla Square Bus Station (3 min walk)</span>
-                <span>Parking Available</span>
+                <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-6 text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-teal-400" />
+                    <span>Rolla Bus Terminal: 2 Min Walk</span>
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Building className="w-3.5 h-3.5 text-teal-400" />
+                    <span>High-Speed Passenger Elevators</span>
+                  </span>
+                </div>
               </div>
             </div>
 
           </div>
 
           {/* Right Column (5 cols): Direct Inquiry & Quick Booking Form */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-md">
+          <div className="lg:col-span-5 bg-white rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-xl">
             <div className="mb-6">
               <span className="text-teal-600 font-bold text-xs uppercase tracking-wider block mb-1">
-                Fast Contact Form
+                Fast Clinical Helpdesk
               </span>
-              <h3 className="text-2xl font-bold font-heading text-slate-900">
+              <h3 className="text-2xl font-black font-heading text-slate-900 tracking-tight">
                 Send An Inquiry or Question
               </h3>
-              <p className="text-slate-500 text-xs mt-1">
-                Have questions about insurance coverage, dental pricing, or doctor availability? We will reply within 30 minutes during working hours.
+              <p className="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                Have questions about insurance coverage, dental pricing, or doctor availability? We reply within 30 minutes during clinic hours.
               </p>
             </div>
 
             {formSubmitted ? (
-              <div className="text-center py-10 bg-teal-50/50 rounded-2xl border border-teal-200/70 p-6 animate-in fade-in">
-                <CheckCircle2 className="w-12 h-12 text-teal-600 mx-auto mb-3" />
-                <h4 className="text-lg font-bold text-slate-900 font-heading">Inquiry Received</h4>
-                <p className="text-slate-600 text-xs mt-2">
-                  Thank you! Our clinical receptionist will contact you on <strong>{formData.phone}</strong> shortly.
+              <div className="text-center py-12 bg-teal-50/70 rounded-2xl border border-teal-200/80 p-6 animate-in fade-in">
+                <div className="w-14 h-14 bg-teal-600 text-white rounded-full flex items-center justify-center mx-auto mb-3.5 shadow-md">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 font-heading">Inquiry Received Successfully</h4>
+                <p className="text-slate-600 text-xs sm:text-sm mt-2 max-w-xs mx-auto">
+                  Thank you <strong className="text-slate-900">{formData.name || 'Patient'}</strong>! Our clinical front-desk will contact you on <strong className="text-teal-700">{formData.phone}</strong> promptly.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
-                  className="mt-5 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold"
+                  className="mt-6 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition"
                 >
                   Send Another Message
                 </button>
@@ -218,8 +248,8 @@ export default function LocationContact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-1">
-                    Your Name
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -227,13 +257,13 @@ export default function LocationContact() {
                     placeholder="e.g. Ahmed Sultan"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 text-slate-800"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-1">
-                    Phone Number (WhatsApp)
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Mobile Number (WhatsApp Preferred)
                   </label>
                   <input
                     type="tel"
@@ -241,48 +271,49 @@ export default function LocationContact() {
                     placeholder="+971 5X XXX XXXX"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 text-slate-800"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-1">
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
                     Service of Interest
                   </label>
                   <select
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 text-slate-800 bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 bg-white transition"
                   >
                     <option value="General Consultation">General Medicine & Routine Health</option>
-                    <option value="Advanced Dentistry">Advanced Dentistry & Whitening</option>
-                    <option value="Orthodontics & Braces">Orthodontics & Aligners</option>
+                    <option value="Advanced Dentistry">Advanced Dentistry & Laser Whitening</option>
+                    <option value="Orthodontics & Braces">Orthodontics & Hollywood Smile</option>
                     <option value="Pediatrics">Pediatrics & Baby Vaccination</option>
-                    <option value="Cardiology">Cardiology & ECG</option>
-                    <option value="Dermatology">Dermatology & Skin Care</option>
-                    <option value="Insurance Question">Insurance Coverage Inquiry</option>
+                    <option value="Cardiology">Cardiology & ECG Diagnostics</option>
+                    <option value="Orthopedics">Orthopedics & Joint Care</option>
+                    <option value="Dermatology">Dermatology & Cosmetology</option>
+                    <option value="Insurance Question">Insurance Coverage Pre-Check</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wide mb-1">
-                    Message or Question
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Message or Medical Query
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="How can our doctors assist you today?"
+                    placeholder="How can our clinical team assist you today?"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 text-slate-800"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-teal-500 text-slate-900 placeholder-slate-400 transition"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 active:scale-[0.99] shadow-md"
+                  className="btn-shine w-full py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 active:scale-[0.99] shadow-lg shadow-teal-900/15 border border-slate-700"
                 >
-                  <Send className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Submit Inquiry</span>
+                  <Send className="w-4 h-4 text-teal-400" />
+                  <span>Submit Clinical Inquiry</span>
                 </button>
               </form>
             )}

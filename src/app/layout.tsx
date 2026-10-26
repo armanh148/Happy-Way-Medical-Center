@@ -31,9 +31,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <meta name="theme-color" content="#0d9488" />
+        <meta name="theme-color" content="#16a34a" />
       </head>
-      <body className="antialiased selection:bg-brand-500 selection:text-white">
+      <body className="antialiased selection:bg-green-600 selection:text-white">
         {children}
       </body>
     </html>

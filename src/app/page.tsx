@@ -10,7 +10,7 @@ import ReviewsTrust from '@/components/ReviewsTrust';
 import LocationContact from '@/components/LocationContact';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
-import { Phone, MessageSquare, Calendar } from 'lucide-react';
+import { MessageSquare, Calendar, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -57,29 +57,33 @@ export default function HomePage() {
       />
 
       {/* Floating Action Buttons for Mobile / Quick Booking */}
-      <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-2.5 items-end">
-        {/* WhatsApp Floating Button */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
+        {/* WhatsApp Floating Button with subtle ping */}
         <a
           href="https://wa.me/971586846600?text=Hi%20Happy%20Way%20Medical%20Center,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20doctor%20consultation."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all group relative"
+          className="w-13 h-13 p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-xl hover:shadow-2xl hover:shadow-emerald-500/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all group relative border-2 border-white"
         >
-          <span className="absolute right-14 bg-slate-900 text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none shadow-md">
+          <span className="absolute -top-1 -right-1 flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+          </span>
+          <span className="absolute right-16 bg-slate-950 text-white text-xs font-bold px-3 py-1.5 rounded-xl opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none shadow-xl border border-slate-800">
             Chat on WhatsApp
           </span>
-          <MessageSquare className="w-6 h-6" />
+          <MessageSquare className="w-6 h-6 fill-current" />
         </a>
 
         {/* Quick Consultation Booking Pill */}
         <button
           onClick={() => handleOpenBooking()}
-          className="px-4 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider shadow-xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all border border-slate-700"
+          className="btn-shine px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-extrabold uppercase tracking-wider shadow-2xl flex items-center gap-2.5 hover:scale-105 active:scale-95 transition-all border border-slate-700/80 shadow-slate-950/20"
         >
           <Calendar className="w-4 h-4 text-teal-400" />
           <span className="hidden sm:inline">Book Consultation</span>
-          <span className="sm:hidden">Book</span>
+          <span className="sm:hidden">Book Now</span>
         </button>
       </div>
     </main>
