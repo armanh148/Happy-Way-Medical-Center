@@ -197,8 +197,8 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
           </div>
         </div>
 
-        {/* Dropdown Filter Bar */}
-        <div className="relative mb-4 z-20" ref={dropdownRef}>
+        {/* Dropdown Filter Bar (Only on Mobile View) */}
+        <div className="block md:hidden relative mb-6 z-20" ref={dropdownRef}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-2.5 sm:p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-sm">
             
             {/* Left: Department Status Indicator */}
@@ -321,8 +321,8 @@ export default function ServicesGrid({ onOpenBooking }: ServicesGridProps) {
           </div>
         </div>
 
-        {/* Quick Horizontal Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2.5 mb-8 no-scrollbar scroll-smooth">
+        {/* Quick Horizontal Filter Pills (Desktop & Tablet View) */}
+        <div className="hidden md:flex items-center gap-2 overflow-x-auto pb-2.5 mb-8 no-scrollbar scroll-smooth">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
