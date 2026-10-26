@@ -76,28 +76,28 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <nav
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-slate-900/5 py-2.5 sm:py-3 border-b border-slate-200/80'
-            : 'bg-white/90 backdrop-blur-md py-3 sm:py-4 border-b border-slate-100'
+            ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-slate-900/5 py-2 border-b border-slate-200/80'
+            : 'bg-white/90 backdrop-blur-md py-2.5 sm:py-3 border-b border-slate-100'
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-3.5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group">
+            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
               <div className="relative">
-                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 via-green-500 to-blue-600 flex items-center justify-center text-white shadow-md sm:shadow-lg shadow-green-600/25 group-hover:scale-105 transition-all duration-300">
-                  <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.5]" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-emerald-600 via-green-500 to-blue-600 flex items-center justify-center text-white shadow-md shadow-green-600/25 group-hover:scale-105 transition-all duration-300">
+                  <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2.5]" />
                 </div>
-                <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-blue-600 rounded-full border-2 border-white flex items-center justify-center">
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-blue-600 rounded-full border-2 border-white flex items-center justify-center">
                   <span className="w-1 h-1 rounded-full bg-white animate-pulse"></span>
                 </div>
               </div>
               <div className="flex flex-col">
-                <div className="flex items-center gap-1 text-lg sm:text-2xl font-black font-heading tracking-tight leading-none">
+                <div className="flex items-center gap-1 text-base sm:text-xl font-black font-heading tracking-tight leading-none">
                   <span className="text-emerald-600 group-hover:text-emerald-500 transition">HAPPY</span>
                   <span className="text-blue-700 group-hover:text-blue-600 transition">WAY</span>
                 </div>
-                <span className="text-[9px] sm:text-[11px] font-bold tracking-widest uppercase text-slate-500 mt-0.5 flex items-center gap-1">
+                <span className="text-[8px] sm:text-[10px] font-bold tracking-widest uppercase text-slate-500 mt-0.5 flex items-center gap-1">
                   <span>Medical Center</span>
                   <span className="w-1 h-1 rounded-full bg-emerald-500"></span>
                   <span className="text-blue-600">Sharjah</span>
@@ -105,40 +105,44 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               </div>
             </a>
 
-            {/* Desktop Navigation Links (Single-Line Guaranteed with whitespace-nowrap) */}
-            <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold text-slate-700">
+            {/* Desktop Navigation Links (Single-Line Guaranteed with whitespace-nowrap & responsive text) */}
+            <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold text-slate-700 shrink-0">
               <a 
                 href="#services" 
-                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200 shrink-0"
               >
-                Services &amp; Specialties
+                <span className="hidden xl:inline">Services &amp; Specialties</span>
+                <span className="xl:hidden">Services</span>
               </a>
               <a 
                 href="#app-features" 
-                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200 flex items-center gap-1.5 group"
+                className="whitespace-nowrap px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200 flex items-center gap-1.5 group shrink-0"
               >
-                <span>Digital Patient App</span>
+                <span className="hidden xl:inline">Digital Patient App</span>
+                <span className="xl:hidden">Patient App</span>
                 <span className="hidden 2xl:inline-block bg-gradient-to-r from-emerald-600 to-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded-full shadow-sm">
                   EMR
                 </span>
               </a>
               <a 
                 href="#doctors" 
-                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200 shrink-0"
               >
                 Specialists
               </a>
               <a 
                 href="#reviews" 
-                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200 shrink-0"
               >
-                Reviews (4.7★)
+                <span className="hidden xl:inline">Reviews (4.7★)</span>
+                <span className="xl:hidden">Reviews</span>
               </a>
               <a 
                 href="#location" 
-                className="whitespace-nowrap px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200"
+                className="whitespace-nowrap px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl hover:text-blue-700 hover:bg-blue-50/70 transition-all duration-200 shrink-0"
               >
-                Location &amp; Hours
+                <span className="hidden xl:inline">Location &amp; Hours</span>
+                <span className="xl:hidden">Location</span>
               </a>
             </div>
 
@@ -146,21 +150,23 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
               <a
                 href="tel:+971586846600"
-                className="whitespace-nowrap flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3.5 xl:py-2.5 rounded-xl text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 text-xs font-bold border border-slate-200/90 hover:border-emerald-300 transition-all duration-200"
+                className="whitespace-nowrap flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 text-xs font-bold border border-slate-200/90 hover:border-emerald-300 transition-all duration-200 shrink-0"
               >
                 <div className="w-5 h-5 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                   <Phone className="w-3 h-3" />
                 </div>
-                <span className="hidden xl:inline">+971 58 684 6600</span>
-                <span className="xl:hidden text-[11px]">Call</span>
+                <span className="hidden 2xl:inline">+971 58 684 6600</span>
+                <span className="2xl:hidden hidden lg:inline text-[11px] font-semibold text-slate-600">058 684 6600</span>
+                <span className="lg:hidden text-[11px]">Call</span>
               </a>
 
               <button
                 onClick={() => onOpenBooking()}
-                className="whitespace-nowrap btn-shine relative inline-flex items-center justify-center gap-1.5 px-3.5 py-2 xl:px-5 xl:py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-emerald-700/20 active:scale-95 transition-all duration-200 shrink-0"
+                className="whitespace-nowrap btn-shine relative inline-flex items-center justify-center gap-1.5 px-3 py-1.5 xl:px-4 xl:py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-700 hover:from-emerald-700 hover:to-blue-800 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-emerald-700/20 active:scale-95 transition-all duration-200 shrink-0"
               >
-                <Calendar className="w-3.5 h-3.5 text-emerald-200" />
-                <span>Book Appointment</span>
+                <Calendar className="w-3.5 h-3.5 text-emerald-200 shrink-0" />
+                <span className="hidden xl:inline">Book Appointment</span>
+                <span className="xl:hidden">Book Visit</span>
               </button>
             </div>
 
